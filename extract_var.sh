@@ -53,7 +53,7 @@ echo -e "                           \033[34m\$vimdir_loc/assets/\033[0m         
 echo -e "                                                                   "
 }
 verbmsg(){
-if [ "$verb" = true ]; then echo -e "\033[32m >>> \033[0m $1"; fi
+if [ "$verb" = true ]; then echo -e "\033[32m\033[2m >>> \033[0m $1"; fi
 }
 
 file_test(){
@@ -141,6 +141,26 @@ parser(){
     done
 }
 
+get_vim_info(){
+	vimversion=$( vim --version | grep Vi | grep -Eo "[[:digit:]]\.[[:digit:]]")
+	vimversion="8.1"
+	verbmsg "checking vim version..."
+	verbmsg "your vim is version\033[2m $vimversion \033[0m"
+	if [ "${vimversion:0:1}" -le 8 ]; then
+		if [ "${vimversion:2:1}" -lt 2  ]; then
+			passed=false
+		else
+			passed=true
+		fi
+	else
+		passed=true
+	fi
+	verbmsg "Is your vim recent enough for completefunc? $passed"
+exit 0
+}
+
+
+get_vim_info
 
 parser "$@"
 
