@@ -16,7 +16,7 @@ grep 'varset=' "$INPUT_FILE" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "
 declare -A ctermcolors
 declare -A guicolors
 guicolors=( ["basic"]="#f0c6c6" ["bse"]="#e6194B" ["dev"]="#7dc4e4" ["dfpt"]="#ed8796" ["dmft"]="#f58231" ["eph"]="#f58231" ["ffield"]="#f58231" ["files"]="#f0c6c6" ["geo"]="#f58231" ["gstate"]="#f0c6c6" ["gw"]="#f58231", ["gwr"]="#f58231", ["internal"]="#f0c6c6", ["paral"]="#f0c6c6", ["paw"]="#f58231" ["rlx"]="#ed8796" ["rttddft"]="#f58231" ["vdw"]="#f58231" ["w90"]="#f58231" )
-ctermcolors=( ["basic"]="1" ["bse"]="#e6194B" ["dev"]="4" ["dfpt"]="2" ["dmft"]="9" ["eph"]="9" ["ffield"]="9" ["files"]="11" ["geo"]="9" ["gstate"]="1" ["gw"]="129", ["gwr"]="129", ["internal"]="8", ["paral"]="11", ["paw"]="14" ["rlx"]="9" ["rttddft"]="5" ["vdw"]="5" ["w90"]="5" )
+ctermcolors=( ["basic"]="1" ["bse"]="3" ["dev"]="4" ["dfpt"]="2" ["dmft"]="9" ["eph"]="9" ["ffield"]="9" ["files"]="11" ["geo"]="9" ["gstate"]="1" ["gw"]="129", ["gwr"]="129", ["internal"]="8", ["paral"]="11", ["paw"]="14" ["rlx"]="9" ["rttddft"]="5" ["vdw"]="5" ["w90"]="5" )
 
 
 
@@ -25,10 +25,13 @@ ctermcolors=( ["basic"]="1" ["bse"]="#e6194B" ["dev"]="4" ["dfpt"]="2" ["dmft"]=
 sort "$OUTPUT_LOC/abiset.txt" | uniq > temp
 
 mkdir -p "$vimdir/syntax"
+if [ -f "$vimdir/syntax/abi.vim" ]; then rm -f "$vimdir/syntax/abi.vim";fi
 
 while IFS= read -r sets; do
-    echo "highlight $sets ctermfg=${ctermcolors[$sets]} guifg=${guicolors[$sets]}" > "$vimdir/syntax/abi.vim"
+    echo "highlight $sets ctermfg=${ctermcolors[$sets]} guifg=${guicolors[$sets]}" >> "$vimdir/syntax/abi.vim"
 done < "temp"
+
+rm -f temp
 
 echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 
