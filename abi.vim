@@ -6,16 +6,16 @@ setlocal dictionary+=$HOME/.vim/assets/abivar.txt
 " longest selects the longest matching item first, 
 " menuone shows menu even when there is only on item
 " popup apply popup near item with options
-setlocal completeopt=longest,menuone,fuzzy,popup
-setlocal completepopup=height:20,width:60
+setlocal completeopt=longest,menuone "minimal option for maximal compatibility
+"setlocal completepopup=height:20,width:60
 setlocal iskeyword+=-
 
 
 " trying custom function :
 "source $HOME/.vim/assets/abivar.txt
 
-let s:varnames=readfile(glob("$HOME/.vim/assets/abivar.txt"))
-let s:mnemonics=readfile(glob("$HOME/.vim/assets/abimnemo.txt")) 
+let s:varnames=readfile(glob("PLACEHOLDER/assets/abivar.txt"))
+let s:mnemonics=readfile(glob("PLACEHOLDER/.vim/assets/abimnemo.txt")) 
 let b:numberofvar=len(s:varnames)
 
 function! CompleteABI(findstart, base)

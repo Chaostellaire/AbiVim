@@ -12,49 +12,56 @@ echo -e "       mkdocs.py file \033[36m like \033[2mvariabes_abinit.py\033[0m   
 echo -e "       and can set up vim files for autocomplete of abinit's input "
 echo -e "                                                                   "
 echo -e "                                                                   "
-echo -e "ex : $0 -v --make-vimconfig variabes_abinit.py .                   "
+echo -e "ex : $0 -v --make-vimconfig variabes_abinit.py                     "
 echo -e "    \033[36mwill extracts from variabes_abinit.py and write results\033[0m "
-echo -e "    \033[36mto current directory, then will construct vim config\033[0m"
+echo -e "    \033[36mto extract directory, then will construct vim config\033[0m"
 echo -e "    \033[36mby appending 2 lines at the end of vimrc at            "
-echo -e "    \033[34m\$HOME/.vim\033[36m, copying abi.vim to \$HOME/.vim\033[36m"
+echo -e "    \033[34m\$HOME/.vim\033[36m, copying abi.vim to\033[34m \$HOME/.vim\033[36m"
 echo -e "    \033[36mand copying on prompt results to \033[34m\$HOME/.vim/asset"
 echo -e "                                                                   "
 echo -e "    \033[0m                                                               "
+echo -e "$0                                                                   "
+echo -e " [-h | --help] [-v | --verbose] [-vv | --very-verbose]"
+echo -e " [-vc | --vimconfig] [--vimdir-path <path/to/.vim>] [--vimrc-path  "
+echo -e " <path/to/vimrc>] [--only-vim] [--only-extract] [-sv | --syntax] INPUTFILE"
+echo -e ""
+echo -e " \033[31mREQUIRED\033[0m \033[32mFLAG\033[0m \033[34mOPTION with ARGUMENT\033[0m"
+echo -e "\033[2m\033[4mPOSITIONNAL ARGUMENT (COMPULSORY):\033[0m                       "
 echo -e "                                                                   "
-echo -e "$0 [-o | --options] INPUT_FILE OUTPUT_LOC                          "
-echo -e "                                                                   "
-echo -e "\033[2m\033[4mPOSITIONNAL ARGUMENTS :\033[0m                                            "
-echo -e "                                                                   "
-echo -e "INPUT_FILE                 File to be parsed for variable name and "
+echo -e "\033[31mINPUT_FILE\033[0m                 File to be parsed for variable name and "
 echo -e "                           description                             "
-echo -e "OUTPUT_LOC                 Directory where the extracted variables "
-echo -e "                           will be saved                           "
 echo -e "                                                                   "
 echo -e "\033[2m\033[4mOPTIONS (GLOBAL) :\033[0m                                                 "
 echo -e "                                                                   "
-echo -e "-h   --help                Will print this help message            "
-echo -e "-v   --verbose             Be verbose with \033[32m >>> \033[0m prefix"
-echo -e "-vv  --very-verbose        Be verbose and print all commands       "
+echo -e "\033[32m-h   --help\033[0m                Will print this help message            "
+echo -e "\033[32m-v   --verbose\033[0m             Be verbose with \033[32m >>> \033[0m prefix"
+echo -e "\033[32m-vv  --very-verbose\033[0m        Be verbose and print all commands       "
 echo -e "                                                                   "
 echo -e "\033[2m\033[4mOPTIONS (VIM SETUP):\033[0m                                               "
 echo -e "                                                                   "
-echo -e "--make-vimconfig           Make files for vim and update dictionary"
+echo -e "\033[32m-vc  --vimconfig\033[0m           Make files for vim and update dictionary"
 echo -e "                           asset with prompt                       "
-echo -e "--vimdir-location          Enter your .vim directory location.     "
+echo -e "\033[34m--vimdir-path\033[0m              Enter your .vim directory path.     "
 echo -e "                           By default it is \033[34m\$HOME/.vim\033[0m            "
-echo -e "--vimrc-location           Enter your vimrc file location. By      "
-echo -e "                           default it is \033[34m\$vimdir_loc/vimrc\033[0m        "
-echo -e "--only-vim                 Flag for skipping the extraction of     "
+echo -e "\033[34m--vimrc-path\033[0m               Enter your vimrc file path. By default  "
+echo -e "                           it is \033[34m\$vimdir_path/vimrc\033[0m        "
+echo -e "\033[32m--only-vim\033[0m                 Flag for skipping the extraction of     "
 echo -e "                           variable names in INPUT_FILE            "
-echo -e "--only-extract             Flag for skipping vim set-up, needs     "
+echo -e "\033[32m--only-extract\033[0m             Flag for skipping vim set-up, needs     "
 echo -e "                           the make-vimconfig flag to work. Will   "
 echo -e "                           still propose to move extraction to     "
-echo -e "                           \033[34m\$vimdir_loc/assets/\033[0m     "
-echo -e "-syn                       Add syntax highlight for .abi (BETA)    "
+echo -e "                           \033[34m\$vimdir_path/assets/\033[0m     "
+echo -e "                                                                   "
+echo -e "\033[2m\033[4mOPTIONS (SYNTAX):\033[0m                          "
+echo -e "                                                                   "
+echo -e "\033[32m-sv   --syntax\033[0m             Add syntax highlight for .abi (BETA)    "
+echo -e "\033[32m-c    --custom\033[0m             Use custom color definition, you can    "
+echo -e "                           modify it in abisyntax.sh               "
 echo -e "                                                                   "
 echo -e "                                                                   "
-echo -e "                                                                   "
-echo -e "                                                                   "
+}
+msg(){
+echo -e " --- $1 \033[0m"
 }
 verbmsg(){
 if [ "$verb" = true ]; then echo -e "\033[32m >>> \033[0m $1"; fi
@@ -97,19 +104,19 @@ parser(){
                 verbmsg "Verbose set on true and set -x"
                 shift
                 ;;
-            --make-vimconfig)
+            -vc | --vimconfig)
                 vimconfig=true
                 shift
                 ;;
-            --vimrc-location)
+            --vimrc-path)
                 file_test $2 true
-                vimrc_loc=$2
+                vimrc_path=$2
                 shift
                 shift
                 ;;
-            --vimdir-location)
+            --vimdir-path)
                 dir_test $2 true
-                vimdir_loc=$2
+                vimdir_path=$2
                 shift
                 shift
                 ;;
@@ -121,8 +128,12 @@ parser(){
                 only_vim=true
                 shift
                 ;;
-            -syn)
+            -sv | --syntax)
                 syntax=true
+                shift
+                ;;
+            -c | --custom)
+                custom=true
                 shift
                 ;;
             -* | --*)
@@ -131,75 +142,74 @@ parser(){
                 exit 1
                 ;;
             *)
-                if [ "$#" -eq 2 ]; then
+                if [ "$#" -eq 1 ]; then
                     file_test $1 true
-                    if [[ "$(dir_test $2 false)" == "1" ]] ; then 
-                        echo -e "\033[33m MAKING DIR $2 \033[0m"
-                        mkdir -p $2
-                    fi
                     INPUT_FILE=$1
-                    OUTPUT_LOC=$2
+                    OUTPUT_LOC="extract"
+                    mkdir -p "$OUTPUT_LOC"
                     shift
                     shift
-                elif [ "$#" -lt 2 ]; then echo -e "\033[31m ERROR ---- please push INPUT ant OUTPUT at the  \033[2m END \033[22m of the command line"; exit 1 ;
+                elif [ "$#" -gt 1 ]; then echo -e "\033[31m ERROR ---- please push INPUT\033[2m END \033[22mof the command line"; exit 1 ;
                 else
-                    echo "\033[31m ERROR ---- not enough arguments please provide INPUT file and OUTPUT dir"
+                    echo "\033[31m ERROR ---- not enough arguments please provide INPUT file"
                 fi
         esac
     done
 }
-
+custom=false
 
 parser "$@"
 
 
-if [ "$only_vim" = true ];then verbmsg "Skipping extraction of data"
+if [ "$only_vim" = true ];then msg "Skipping extraction of data"
 else
-    verbmsg "Extracting varnames..."
+    msg "Extracting varnames..."
     grep 'abivarname=' "$INPUT_FILE" | sed -E "s/.*abivarname=[\"']([^\"']+)[\"'].*/\1/" > "$OUTPUT_LOC/abivar.txt"
-    verbmsg "Extracting mnemonics..."
+    msg "Extracting mnemonics..."
     grep 'mnemonics=' "$INPUT_FILE" | sed -E "s/.*mnemonics=[\"']([^\"']+)[\"'].*/\1/" > "$OUTPUT_LOC/abimnemo.txt"
-    verbmsg "done with extraction..."
+    msg "done with extraction..."
 fi
 
 if [ "$vimconfig" = true ] ; then
     if [ "$only_extract" = true ]; then verbmsg "Skipping vim setting up"
     else
-        verbmsg "looking for vim variable declaration"
-        if [[ -z "$vimdir_loc" ]]; then 
-            verbmsg "vimdir_loc was not given, assuming .vim is in \$HOME"
-            vimdir_loc=$HOME/.vim
+        msg "looking for vim directory and vimrc"
+        if [[ -z "$vimdir_path" ]]; then 
+            verbmsg "vimdir_path was not given, assuming .vim is in \$HOME"
+            vimdir_path=$HOME/.vim
+            dir_test $vimdir_path true
         fi
-        if [[ -z "$vimrc_loc" ]]; then
-            verbmsg "vimrc_loc was not given, assuming vimrc is in $vimdir_loc"
-            vimrc_loc=$vimdir_loc/vimrc
+        if [[ -z "$vimrc_path" ]]; then
+            verbmsg "vimrc_path was not given, assuming vimrc is in $vimdir_path"
+            vimrc_path=$vimdir_path/vimrc
+            file_test $vimrc_path true
         fi
-        verbmsg "checking if vimrc contains abi filetype declaration and filetype plugin on !"
-        if [ "$(grep "au! BufRead,BufNewFile \*.abi setfiletype abi" $vimrc_loc | wc -l) " -eq 0 ]; then
-            echo "au! BufRead,BufNewFile *.abi setfiletype abi" >> $vimrc_loc
-        fi
-    
-        if [ "$(grep "filetype plugin indent on" $vimrc_loc | wc -l) " -eq 0 ]; then
-            echo "filetype plugin indent on" >> $vimrc_loc
+        msg "checking if vimrc contains \033[36m abi filetype \033[0m declaration and \033[36mfiletype plugin on\033[0m !"
+        if [ "$(grep "au! BufRead,BufNewFile \*.abi setfiletype abi" $vimrc_path | wc -l) " -eq 0 ]; then
+            echo "au! BufRead,BufNewFile *.abi setfiletype abi" >> $vimrc_path
         fi
     
-        verbmsg "sending filetype file..."
-        mkdir -p "$vimdir_loc/ftplugin"
-        echo "here"
-        cp -i abi.vim "$vimdir_loc/ftplugin/abi.vim"
+        if [ "$(grep "filetype plugin indent on" $vimrc_path | wc -l) " -eq 0 ]; then
+            echo "filetype plugin indent on" >> $vimrc_path
+        fi
+    
+        msg "sending filetype file..."
+        mkdir -p "$vimdir_path/ftplugin"
+        cp -i abi.vim "$vimdir_path/ftplugin/abi.vim"
+        sed -i "1,$ s+PLACEHOLDER+${vimdir_path}+" $vimdir_path/ftplugin/abi.vim
     fi
     
     verbmsg "looking for assets vim dir"
-    read -p "Would you like to copy extracted variables to $vimdir_loc/assets ? [y/n] " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 0
-    mkdir -p "$vimdir_loc/assets"
-    cp -f $OUTPUT_LOC/abi*.txt "$vimdir_loc/assets"
-verbmsg "done"
+    read -p "Would you like to copy extracted variables to $vimdir_path/assets (used by default abi.vim) ? [y/n] " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 0
+    mkdir -p "$vimdir_path/assets"
+    cp -f $OUTPUT_LOC/abi*.txt "$vimdir_path/assets"
+msg "done"
 fi
 
 
 if [ "$syntax" = true ]; then
-    verbmsg "make syntax"
-    ./abisyntax.sh $INPUT_FILE $OUTPUT_LOC $verb $vimdir_loc 
+    msg "make syntax"
+    ./abisyntax.sh $INPUT_FILE $OUTPUT_LOC $verb $vimdir_path $custom 
 fi
 
         
