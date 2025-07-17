@@ -43,4 +43,4 @@ while IFS= read -r var && IFS= read -r sets <&3; do
 done < "$OUTPUT_LOC/abivar.txt" 3< "$OUTPUT_LOC/abiset.txt"
 
 
-
+echo "syntax def Repeat guifg=#ed8796 guibg=#e6194b"
