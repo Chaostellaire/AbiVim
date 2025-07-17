@@ -77,7 +77,7 @@ echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 n=$(wc -l "$OUTPUT_LOC/abiset.txt")
 
 while IFS= read -r var && IFS= read -r sets <&3; do
-  echo "syntax match $sets \"$var[0-9|\?|:]*\"" >> "$vimdir/syntax/abi.vim"
+  echo "syntax match $sets \"$var[0-9?:]*$\"" >> "$vimdir/syntax/abi.vim"
 done < "$OUTPUT_LOC/abivar.txt" 3< "$OUTPUT_LOC/abiset.txt"
 
 # add comment detection :
