@@ -6,6 +6,7 @@
 INPUT_FILE=$1
 OUTPUT_LOC=$2
 verb=$3
+echo "$@"
 vimdir=$4
 custom=$5
 #fetch every type of var :

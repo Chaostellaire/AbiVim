@@ -85,8 +85,16 @@ fi
 return 0
 }
 
+vimconfigparser(){
+    if [ "$#" -eq 0 ]; then echo -e "\033[31m ERROR ---- not enough arguments please provide INPUT file"; exit 1; fi
+    while [ "$#" -gt 0 ];do
+        case $1 in
+        esac
+    done
+}
+
 parser(){
-    if [ "$#" -eq 0 ]; then echo -e "\033[31m ERROR ---- not enough arguments please provide INPUT file and OUTPUT dir"; exit 1; fi
+    if [ "$#" -eq 0 ]; then echo -e "\033[31m ERROR ---- not enough arguments please provide INPUT file"; exit 1; fi
     while [ "$#" -gt 0 ];do
         case $1 in
             -h | --help)
@@ -157,7 +165,7 @@ parser(){
     done
 }
 custom=false
-
+verb=false
 parser "$@"
 
 

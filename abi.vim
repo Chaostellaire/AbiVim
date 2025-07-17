@@ -15,7 +15,7 @@ setlocal iskeyword+=-
 "source $HOME/.vim/assets/abivar.txt
 
 let s:varnames=readfile(glob("PLACEHOLDER/assets/abivar.txt"))
-let s:mnemonics=readfile(glob("PLACEHOLDER/.vim/assets/abimnemo.txt")) 
+let s:mnemonics=readfile(glob("PLACEHOLDER/assets/abimnemo.txt")) 
 let b:numberofvar=len(s:varnames)
 
 function! CompleteABI(findstart, base)
