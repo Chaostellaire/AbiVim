@@ -49,7 +49,11 @@ echo -e "                           variable names in INPUT_FILE            "
 echo -e "--only-extract             Flag for skipping vim set-up, needs     "
 echo -e "                           the make-vimconfig flag to work. Will   "
 echo -e "                           still propose to move extraction to     "
-echo -e "                           \033[34m\$vimdir_loc/assets/\033[0m                    "
+echo -e "                           \033[34m\$vimdir_loc/assets/\033[0m     "
+echo -e "-syn                       Add syntax highlight for .abi (BETA)    "
+echo -e "                                                                   "
+echo -e "                                                                   "
+echo -e "                                                                   "
 echo -e "                                                                   "
 }
 verbmsg(){
@@ -115,6 +119,10 @@ parser(){
                 ;;
             --only-vim)
                 only_vim=true
+                shift
+                ;;
+            -syn)
+                syntax=true
                 shift
                 ;;
             -* | --*)
@@ -208,6 +216,11 @@ if [ "$vimconfig" = true ] ; then
 verbmsg "done"
 fi
 
+
+if [ "$syntax" = true ]; then
+    verbmsg "make syntax"
+    ./abisyntax.sh $INPUT_FILE $OUTPUT_LOC $verb $vimdir_loc 
+fi
 
         
 
