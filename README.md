@@ -1,9 +1,22 @@
+<p align="center">
+  <img src="./abivim.png" />
+</p>
 # AbiVim
 
-This repository is in relation with the [Abinit Project](https://www.abinit.org/) that you can also find on GithuB [here](https://github.com/abinit/abinit). 
-\\
+This repository is in relation with the [Abinit Project](https://www.abinit.org/) 
+that you can also find on GithuB [here](https://github.com/abinit/abinit).**This repository is not part of the official toolchain**
+**of Abinit Project.**
+
 AbiVim can set up an autocompleter for Abinit's input files inside vim. It can parse mkdocs.py files from
 Abinit's source code to generate lists of relevent data relating to Abinit's input variables.
+
+# Requirement 
+
+You need at least vim version 8.2 for the autocomplete function to work. Any vim version should work for syntax coloring but vim >= 7.0 
+is recommended. 
+
+You need to have access to Abinit mkdocs locally to excute the script.
+
 
 # Installation
 
@@ -56,8 +69,6 @@ AbiVim will check if your vimrc has the required options to make autocomplete wo
 Next step is to create the abi.vim file that will be used to define abi filetype specific commands. Because abi.vim file will be copied, you
 can modify it as you please. Note that "PLACEHOLDER" will be changed by the vimdir path you gave to AbiVim
 
-\\
-\\
 To enable syntax highlight use the `-sv` flag. Syntax routines are independent from the vim autocomplete configuration.
 However, if you which to only enable syntax highlight, you still need to declare 
 .abi files as a custom filetype in your vimrc, activate syntax and extract variables.
@@ -74,6 +85,8 @@ filetype plugin indent on
 ```
 
 This will enable Abinit's inputs file detection and call the scripts located at `.vim/ftplugin/abi.vim` and `.vim/syntax/abi.vim`
+
+Next you need to add a 'ftplugin' directory to the '.vim' directory-tree. When vim detects that your file satisfies a filetype requirement, it will load the corresponding vimscript in `.vim/ftplugin/<filetype>.vim` in our case we declared all `*.abi` files to be an "abi" filetype
 
 
 
