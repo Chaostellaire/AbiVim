@@ -6,7 +6,6 @@
 INPUT_FILE=$1
 OUTPUT_LOC=$2
 verb=$3
-echo "$@"
 vimdir=$4
 custom=$5
 #fetch every type of var :
@@ -78,14 +77,14 @@ echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 n=$(wc -l "$OUTPUT_LOC/abiset.txt")
 
 while IFS= read -r var && IFS= read -r sets <&3; do
-  echo "syntax keyword $sets $var" >> "$vimdir/syntax/abi.vim"
+  echo "syntax match $sets \"$var[0-9|\?|:]*\"" >> "$vimdir/syntax/abi.vim"
 done < "$OUTPUT_LOC/abivar.txt" 3< "$OUTPUT_LOC/abiset.txt"
 
 # add comment detection :
 
 echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 
-echo "syntax match Comment \"^#.*\"" >> "$vimdir/syntax/abi.vim"
+echo "syntax match Comment \"#.*\"" >> "$vimdir/syntax/abi.vim"
 echo "highlight BrightComment ctermfg=4 guifg=$green" >> "$vimdir/syntax/abi.vim"
 echo "syntax match BrightComment \"^##.*\"" >> "$vimdir/syntax/abi.vim"
 
