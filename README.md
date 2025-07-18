@@ -16,6 +16,20 @@ Abinit's source code to generate lists of relevent data relating to Abinit's inp
   <img src="./assets/exemple.png" title="PAW Tutorial input with introduced errors" width="600" />
 </p>
 
+# Table of Contents
+1. [Requirement](#requirement)
+2. [Installation](#installation)
+3. [Quick start](#quick-start)
+4. [Usage](#usage)
+    1. [Simple data extraction](#simple-data-extraction)
+    2. [Vim configuration](#vim-configuration)
+5. [Custom Colors](#custom-colors)
+    1. [Modifying the color groups of abivars](#modifying-the-color-groups-of-abivars)
+    2. [Modifying the custom color called by -c](#modifying-the-custom-color-called-by--c)
+    3. [Modifying the colorscheme linked colors](#modifying-the-colorscheme-linked-colors)
+    4. [Deactivating BrightComments](#deactivating-brightComments)
+6. [Special Thanks](#special-thanks)
+
 # Requirement 
 
 You need at least vim version 8.2 for the autocomplete function to work. Any vim version should work for syntax coloring but vim >= 7.0 
@@ -154,7 +168,7 @@ To modify colors called by the -c flag you can just adjust the colors definition
 
 Keep in mind that you can also modify, the BrightComment group (defined by leadind '##') and Reapeat group color at the end of `abisyntax.vim`
 
-## Modifying the colorscheme linked colors.
+## Modifying the colorscheme linked colors
 
 To modify the colors used without the -c flag you need to edit the `setlink` hash table. The values assigned to each Keys is a predifined 
 group that vim's knows by default and that is affected by your current colorscheme. To see each possible values you can use the vim command :
