@@ -58,8 +58,8 @@ function! HighlightRepeats() range
       let lineNum += 1
       continue
     endif
-
-    let firstWord = matchstr(lineText, '^\s*\zs[A-Za-z]\+[0-9?:]*')
+" input variables can contain _ in abinit
+    let firstWord = matchstr(lineText, '^\s*\zs[A-Za-z_]\+[0-9?:+]*')
 
     if firstWord != ''
       let wordCounts[firstWord] = (has_key(wordCounts, firstWord) ? wordCounts[firstWord] : 0) + 1
@@ -76,7 +76,7 @@ function! HighlightRepeats() range
     if lineText =~? '^\s*#' || lineText =~? '^\s*!'
       continue
     endif
-    let firstWord = matchstr(lineText, '^\s*\zs[A-Za-z]\+[0-9?:]*')
+    let firstWord = matchstr(lineText, '^\s*\zs[A-Za-z_]\+[0-9?:+]*')
 
     if has_key(wordCounts, firstWord) && wordCounts[firstWord] >= 2
       exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
