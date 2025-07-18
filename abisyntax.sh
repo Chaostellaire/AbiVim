@@ -90,6 +90,6 @@ echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 
 echo "syntax match Comment \"#.*\"" >> "$vimdir/syntax/abi.vim"
 echo "highlight BrightComment ctermfg=4 guifg=$green" >> "$vimdir/syntax/abi.vim"
-echo "syntax match BrightComment \"^##.*\"" >> "$vimdir/syntax/abi.vim"
+echo "syntax match BrightComment \"##.*\"" >> "$vimdir/syntax/abi.vim"
 echo "highlight Repeat guifg=#ed8796 guibg=#e6194b" >> "$vimdir/syntax/abi.vim"
 if [ "$custom" = false ]; then echo "highlight! link Repeat SpellBad" >> "$vimdir/syntax/abi.vim"; fi

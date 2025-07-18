@@ -1,6 +1,6 @@
 " Using only the dictionary created with the scrapper 
 setlocal complete=k
-setlocal dictionary+=$HOME/.vim/assets/abivar.txt
+setlocal dictionary+=PLACEHOLDER/assets/abivar.txt
 
 " setting up the complete options
 " longest selects the longest matching item first, 

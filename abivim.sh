@@ -217,6 +217,11 @@ fi
 
 if [ "$syntax" = true ]; then
     msg "make syntax"
+    if [[ -z "$vimdir_path" ]]; then
+        verbmsg "vimdir_path was not given, assuming vimdir is in \$HOME"
+        vimdir_path="$HOME/.vim"
+        dir_test $vimdir_path true
+    fi
     ./abisyntax.sh $INPUT_FILE $OUTPUT_LOC $verb $vimdir_path $custom 
 fi
 
