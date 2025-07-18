@@ -27,9 +27,12 @@ sky="#89DCEB"
 sapphire="#74C7EC"
 blue="#89B4FA"
 lavender="#B4BEFE"
+
+
 #assume we go with custom coloring
 declare -A ctermcolors
 declare -A guicolors
+declare -A setlink
 guicolors=( ["basic"]="$sapphire" ["bse"]="$sapphire" ["dev"]="$mauve" 
     ["dfpt"]="$red" ["dmft"]="$red" ["eph"]="$red" ["ffield"]="$red"
     ["files"]="$pink" ["geo"]="$teal" ["gstate"]="$sapphire" ["gw"]="$maroon"
@@ -43,7 +46,8 @@ ctermcolors=( ["basic"]="1" ["bse"]="3" ["dev"]="4" ["dfpt"]="2" ["dmft"]="9" ["
 
 setlink=( ["basic"]="Type" ["bse"]="Type" ["dev"]="Identifier" ["dfpt"]="Conditional" ["dmft"]="Conditional" ["eph"]="Conditional"
     ["ffield"]="Conditional" ["files"]="Boolean" ["geo"]="Operator" ["gstate"]="Type" ["gw"]="String" ["gwr"]="String"
-    ["internal"]="Comment" ["paral"]="Boolean" ["paw"]="Type" ["rlx"]="Conditional" ["rttddft"]="Conditional" ["vdw"]="String" ["w90"]="String" )
+    ["internal"]="Comment" ["paral"]="Boolean" ["paw"]="Type" ["rlx"]="Conditional"
+    ["rttddft"]="Conditional" ["vdw"]="String" ["w90"]="String" )
 
 
 
@@ -54,7 +58,7 @@ if [ -f "$vimdir/syntax/abi.vim" ]; then rm -f "$vimdir/syntax/abi.vim";fi
 
 
 echo "\" abi syntax file for vim" > "$vimdir/syntax/abi.vim"
-echo "" > "$vimdir/syntax/abi.vim"
+echo " " >> "$vimdir/syntax/abi.vim"
 
 # First define default groups
 while IFS= read -r sets; do
@@ -63,8 +67,9 @@ done < "temp"
 
 # if we have not selected custom, link to vim theme
 if [ "$custom" = false ]; then
-    while IFS= read -r sets; do
-        echo "highlight link $sets ${setlink[$sets]}">> "$vimdir/syntax/abi.vim"
+    while IFS= read -r newsets; do
+        echo ${setlink[$newsets]}
+        echo "highlight! link $newsets ${setlink[$newsets]} ">> "$vimdir/syntax/abi.vim"
     done < "temp"
 fi
 
@@ -88,4 +93,4 @@ echo "syntax match Comment \"#.*\"" >> "$vimdir/syntax/abi.vim"
 echo "highlight BrightComment ctermfg=4 guifg=$green" >> "$vimdir/syntax/abi.vim"
 echo "syntax match BrightComment \"^##.*\"" >> "$vimdir/syntax/abi.vim"
 echo "highlight Repeat guifg=#ed8796 guibg=#e6194b" >> "$vimdir/syntax/abi.vim"
-echo "highlight link Repeat Error" >> "$vimdir/syntax/abi.vim"
+if [ "$custom" = false ]; then echo "highlight! link Repeat SpellBad" >> "$vimdir/syntax/abi.vim"; fi
