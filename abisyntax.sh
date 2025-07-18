@@ -68,7 +68,6 @@ done < "temp"
 # if we have not selected custom, link to vim theme
 if [ "$custom" = false ]; then
     while IFS= read -r newsets; do
-        echo ${setlink[$newsets]}
         echo "highlight! link $newsets ${setlink[$newsets]} ">> "$vimdir/syntax/abi.vim"
     done < "temp"
 fi
@@ -82,7 +81,7 @@ echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 n=$(wc -l "$OUTPUT_LOC/abiset.txt")
 
 while IFS= read -r var && IFS= read -r sets <&3; do
-  echo "syntax match $sets \"\<$var[0-9]*[:?]\?\>\"" >> "$vimdir/syntax/abi.vim"
+  echo "syntax match $sets \"\<$var[0-9]*[:?]*\>\"" >> "$vimdir/syntax/abi.vim"
 done < "$OUTPUT_LOC/abivar.txt" 3< "$OUTPUT_LOC/abiset.txt"
 
 # add comment detection :
