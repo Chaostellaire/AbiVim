@@ -1,6 +1,6 @@
 " Using only the dictionary created with the scrapper 
 setlocal complete=k
-setlocal dictionary+=PLACEHOLDER/assets/abivar.txt
+setlocal dictionary+=../assets/abivar.txt
 
 " setting up the complete options
 " longest selects the longest matching item first, 
@@ -14,8 +14,8 @@ setlocal iskeyword+=-
 " trying custom function :
 "source $HOME/.vim/assets/abivar.txt
 
-let s:varnames=readfile(glob("PLACEHOLDER/assets/abivar.txt"))
-let s:mnemonics=readfile(glob("PLACEHOLDER/assets/abimnemo.txt")) 
+let s:varnames=readfile(glob("../assets/abivar.txt"))
+let s:mnemonics=readfile(glob("../assets/abimnemo.txt")) 
 let b:numberofvar=len(s:varnames)
 
 function! CompleteABI(findstart, base)

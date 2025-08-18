@@ -1,0 +1,956 @@
+ACCURACY
+CELL lattice vector scaling
+ADiabatic Path-Integral Molecular Dynamics
+ADiabatic Path-Integral Molecular Dynamics: GAMMA factor
+ALGorithm for generating ALCHemical pseudopotentials
+Atomic Mass Units
+ANGles in DEGrees
+Acoustic Sum Rule
+ATomic potential (V) energy SHIFTs
+AUTOmatisation of the PARALlelism
+AUxiliary XC functional for hybrid functional, IXC number
+AUxiliary XC functional for hybrid functional- SCALing factor
+    mnemonics=r"evaluate the Adler-Wiser expression of $\chi^{0}_{KS}$ assuming Time-Reversal",
+BAND Per Processor
+BanD limits for BERRY phase
+BanD for second-order EIGenvalues from Response-Function
+BanDs for GW calculation
+BERRY phase OPTions
+BERRY SAVe
+BERRY phase: multiple STEP
+finite B FIELD calculation
+Barostat MASS
+BOX CENTER
+BOX CUT-off MINimum
+BRaVais LaTTice type
+Bethe-Salpeter ALGORITHM
+Bethe-Salpeter CALCulation TYPE
+Bethe-Salpeter COULOMB TERM
+Bethe-Salpeter COUPLING
+Bethe-Salpeter Electron-Hole CUTOFF
+Bethe-Salpeter EXCHANGE TERM
+Bethe-Salpeter FREQuency MESH
+Bethe-Salpeter HAYdock TERMinator
+Bethe-Salpeter HAYDOCK Number of ITERations
+Bethe-Salpeter HAYDOCK TOLerance
+Bethe-Salpeter INTERPolation K-point MULTiplication factors
+Bethe-Salpeter INTERPolation Method3 WIDTH
+Bethe-Salpeter INTERPolation METHOD
+Bethe-Salpeter INTERPolation MODE
+Bethe-Salpeter INTERPolation PREParation
+Bethe-Salpeter INTERPolation Rohlfing & Louie NeighBour
+Bethe-Salpeter Lowest Occupied BAND
+Bethe-Salpeter Number of STATES
+BUILT-IN TEST number
+BoX CuT-off MINimum for the Double Grid (PAW)
+Contour Deformation CUSTOM IMaginary FReQuencieS
+Contour Deformation FReQuency integration on IMaginary axis Method
+Contour Deformation FULL GRID in complex plane
+Contour Deformation tangent grid HALFWAY FREQuency
+Contour Deformation IMaginary FReQuencieS
+Contour Deformation grid MAXimum FREQuency
+Contour Deformation grid calculate SUBSET of FREQuencies
+CELL CHARGE
+CHARGE
+CHEByshev FIltering algorithm ORACLE
+spatially varying CHEMical POTential
+CHecK DILATMX
+CHecK whether the user want to EXIT
+CHecK whether the PARALelism is adequate
+CHecK whether the cell is PRIMitive
+CHecK SYMmetry BREAKing
+CHecK SYMmetry of TNONS
+CHarge NEUTrality treatment
+CHARGE of the AToms
+Climbing-Image Nudged Elastic Band: STARTing iteration
+CONSTRAINT KIND in constrained DFT
+C-PRoJectors IN MEMORY
+C-PRoJectors UPDATE LeVeL
+CPU time limit in Hours
+CPU time limit in Minutes
+CPU time limit in seconds
+3rd Derivative of Energy, mixed PERTurbation 1: limits of ATomic POLarisations
+3rd Derivative of Energy, mixed PERTurbation 1: DIRections
+3rd Derivative of Energy, mixed PERTurbation 1: ELectric FielD
+3rd Derivative of Energy, mixed PERTurbation 1: PHONons
+3rd Derivative of Energy, mixed PERTurbation 2: limits of ATomic POLarisations
+3rd Derivative of Energy, mixed PERTurbation 2: DIRections
+3rd Derivative of Energy, mixed PERTurbation 2: ELectric FielD
+3rd Derivative of Energy, mixed PERTurbation 2: PHONons
+3rd Derivative of Energy, mixed PERTurbation 3: limits of ATomic POLarisations
+3rd Derivative of Energy, mixed PERTurbation 3: DIRections
+3rd Derivative of Energy, mixed PERTurbation 3: ELectric FielD
+3rd Derivative of Energy, mixed PERTurbation 3: PHONons
+electric Displacement field DAMPing parameter
+Derivative DataBase: Number of Grid points for Q-PoinTs
+Derivative DataBase: SHIFT of the Q-points
+DELAY between trials to PERMUTE atoms
+DENSity and FORces PREDictor
+initial DENSity for each TYpe of atom
+Displacement FIELD
+DFPT SCISSor operator
+DIElectric matrix energy CUToff
+DIElectric matrix GAP
+DIElectric matrix LAMbda
+model DIElectric screening LeNGth
+model DIElectric MACroscopic constant
+model DIElectric MIXing factor
+model DIElectric MIXing factor for the MAGgnetization
+Direct Inversion in the Iterative Subspace MEMORY
+lattice DILATation: MaXimal value
+DIPole-DIPole interaction
+initial Density MATrix for PAW+U
+Density MATrix for PAW+U OPTion
+Density MATrix for paw+U, DIAGonalization
+Dynamical Mean Field Theory: charge density precision
+Dynamical Mean Field Theory: Double Counting
+Dynamical Mean Field Theory: ENTROPY
+Dynamical Mean Field Theory: compute K-resolved SPECTRAL FUNCtion
+Dynamical Mean Field Theory: number of ITERation
+Dynamical Mean Field Theory: MiXing parameter for the SelF energy
+Dynamical Mean Field Theory: Number of LAMBDA points
+Dynamical Mean Field Theory: Number of frequency omega (W) in the LInear mesh
+Dynamical Mean Field Theory: Number of frequency omega (W) in the LOg mesh
+Dynamical Mean Field Theory: Occupation non-diagonal imaginary part
+Dynamical Mean Field Theory: READ OCCupations (Non Diagonal)
+Dynamical Mean Field Theory: Read SeLF energy
+Dynamical Mean Field Theory: choice of SOLVer
+Dynamical Mean Field Theory: t2g orbitals
+Dynamical Mean Field Theory: TOLerance on DFT correlated electron occupation matrix for the definition of the FREQuency grid
+Dynamical Mean Field Theory: TOLerance on Local Charge for convergence of the DMFT loop
+Dynamical Mean Field Theory: WANnier OrthoNormalization
+Dynamical Mean Field Theory: BAND: Final
+Dynamical Mean Field Theory: BAND: Initial
+Dynamical Mean Field Theory: CHECKs
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo BASIS
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo CHECK
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo CORRELations
+Dynamical Mean Field Theory: CTQMC: calculation of weight of CONFIGurations
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo Global MOVEs
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo GReeNs NoiSe
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo MEASurements
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo MOVie
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo MARKov Analysis
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo perturbation ORDER
+Dynamical Mean Field Theory: Continuous Time Quantum Monte Carlo perturbation of TRIQS, Number of LEGendre polynomials
+Dynamical Mean Field Theory: Quantum Monte Carlo time sLices
+Dynamical Mean Field Theory: Quantum Monte Carlo Number of sweeps
+Dynamical Mean Field Theory: Quantum Monte Carlo SEED
+Dynamical Mean Field Theory: Quantum Monte Carlo THERMalization
+DOS DELTA in Energy
+Delta Time for ELEctrons
+Delta Time for IONs
+list of DYNamic IMAGEs
+Energy CUToff
+Energy CUT-off for EPSilon (the dielectric matrix)
+Energy CUT-off for SIGma eXchange
+Energy CUToff SMearing
+Energy CUT-off for WaveFunctioNs
+EFFective MASS for the FREE electron
+Electric FIELD
+EFfective MASs
+EFfective MASs, BANDS to be treated.
+EFfective MASs, CALCulate along DIRectionS
+EFfective MASs, activate DEGenerate formalism
+EFfective MASs, DEGeneracy TOLerance
+EFfective MASs, DIMension of the effective mass tensor
+EFfective MASs, DIRectionS to be calculated
+EFfective MASs, Number of DIRectionS
+EFfective MASs, Number of points for integration w/r to THETA
+Electron bands INTERPolation
+ELectron-PHonon interaction at 2nd order: IMAGinary shift of the DENominator
+ENergy UNITs
+Electron-PHonon: Allen-Heine-Cardona type
+Electron-PHonon: EXTRA ELectrons
+Electron-PHonon: FERMI Energy
+Electron-PHonon: FROHLICH Model
+Electron-PHonon: FROHLIich Number of THETA points
+Electron-Phonon: Fermi Surface Energy WINdow
+Electron-PHonon: Fermi surface SMEARing
+Electron-Phonon: INTegration METHod
+Electron-PHonon: MU STAR (electron-electron interaction strength)
+Electron-PHonon: Number of Grid Q-PoinTs in FINE grid.
+Electron-PHonon: Task
+Electron-PHonon: TRANSPORT flag
+Energy SHIFT
+Eigenvalue SMEARing
+EXCHange MIXing
+EXCHange N2 and N3 Dimensions
+EXPERTise of the USER
+flag - EXTRAPolation of the Wave-Functions
+F4 Over F2 ratio of Slater integrals
+F6 Over F2 ratio of Slater integrals
+Factor for the number of BANDs
+FERMI Energy for printing the NESTing function
+NonLocal Form Factors in LongWave calculation
+Fast Fourier Transform ALGorithm
+Fast Fourier Transform CACHE size
+Fast Fourier Transform COUNTer
+FFT for GW calculation
+FIELD in REDuced coordinates
+FOCK operator, k-grid DOWNSAMPLING
+Integer that governs the CUT-off for COULomb interaction
+FOCK operator: OPTions for MIXing
+FREQuencies along the IMaginary axis ALPHA parameter
+FREQuencies along the Real axis MAXimum
+FREQuencies along the Real axis MINimum
+FREQuencies for the SPectral function MAXimum
+FREQuencies for the SPectral function MINimum
+internal FRICTION coefficient
+internal FRICTION coefficient of the BARostat
+FReeZe FERMI energy
+Forces to (X) CARTesian coordinates FACTOR
+Genetic Algorithm - ALGOrithm selection
+Genetic Algorithm FITNESS function selection
+Genetic Algorithm Number of RULES
+Genetic Algorithm OPTimal PERCENT
+Genetic Algorithm RULES
+GENerator of the translation for Anti-FerroMagnetic space group
+GEOmetry OPTimization
+GET the first-order density from _1DEN file
+GET the first-order wavefunctions from _1WF file
+GET the Bethe-Salpeter COUPling block from...
+GET the Bethe-Salpeter EIGenstates from...
+GET the Bethe-Salpeter RESOnant block from...
+GET CELL parameters from...
+GET the DDB from...
+GET the DDK wavefunctions from _1WF file
+GET the 1st derivative of wavefunctions with respect to ELectric FielD, from _1WF file
+GET the DENsity from...
+GET the mixed 2nd derivative of wavefunctions with respect to K and electric field, from _1WF file
+GET the 2nd derivative of wavefunctions with respect to K, from _1WF file
+GET the DVDB from...
+GET the EFfective MASses from...
+GET the GAMma phonon data EIG2NKQ from dataset
+GET the HAYDOCK restart file from...
+GET the Kinetic energy DENsity from...
+GET OCC parameters from...
+GET QuasiParticle Structure
+GET SCReening (the inverse dielectric matrix) from...
+GET SUSCEPtibility (the irreducible polarizability) from...
+GET VEL from...
+GET the wavefunctions from _WFK file
+GET the fine grid wavefunctions from _WFK file
+GET the wavefunctions from _WFQ file
+GET XCART from...
+GET XRED from...
+Geometry Optimization PRECONditioner equations
+Geometry Optimization PREconditioner PaRaMeters equations
+GPU: choice of DEVICES on one node
+GPU KOKKOS implementation: Number of THReaDs
+GPU: LINear ALGebra LIMIT
+GPU: Non-Local operator, DISTRIBute projections
+GPU: Non-Local operator SPLITing SIZE
+GPU: OPTION to choose the implementation
+GPU: Thread Limit
+GW CUSTOM FREQuencies for SPectral function
+GW SPectral FREQuencies
+GW Contour Deformation FReQuencies on IMaginary axis Inverse Z Grid
+GW Contour Deformation FReQuencies on REal axis Inverse Z Grid
+GW Contour Deformation FReQencies on REal axis - Use Tangent Grid
+GW CUT-off for COULomb interaction
+GW treatment of INVALID FREQuency for Hybertsen-Louie PPM
+GW, Number of Q-points for the Long Wave-Length Limit
+GWR Number of self-consistent STEPs
+GWR FIT
+GW, Q-points for the Long Wave-Length limit
+GW QuasiParticle RANGE policy
+GW, SIGma (self-energy) for the CORE contribution
+GWR TOLerance on the difference of the QP Energies
+GW 1-Reduced Density Matrix
+GW Analytic Continuation LOW RANK approximation
+GW CALCulation TYPe
+GW COMPleteness
+GW ENergy for COMPleteness
+GW GAMMA
+GW Galitskii-Migdal CORRelation energy
+GWLS BAND INDEX
+GWLS CORRELATION
+GWLS dielectric model
+GWLS exact EXCHANGE
+GWLS FIRST SEED vector
+GWLS KMAX for the ANALYTIC term
+GWLS KMAX for the COMPLEMENT space.
+GWLS KMAX for the NUMERIC term
+GWLS KMAX for the calculation of the POLES residue
+GWLS LIST of the PROJection FREQuencies
+GWLS MODEL PARAMETER
+GWLS Number of PROJection FREQuencies
+GWLS Number of PoinTs to use for the GAUSSian QUADrature
+GWLS Number of SEED vectorS
+GWLS PRINT level for DEBUGging
+GWLS RECYCLE
+GWLS Kmax
+GW MEMory
+GW PARAllelization level
+GW RPA CORRelation energy
+Hybrid Monte Carlo Trial Trajectory
+Hybrid Monte Carlo Strain Step Trajectory
+HYBrid MIXING coefficient for unscreened fock operator
+HYBrid MIXING coefficient for Short-Range screened fock operator
+HYBrid RANGE for the DFT leftover from the screened fock operator
+HYBrid RANGE for the screened FOCK operator
+Indices of AToms in CONstraint equations
+Indices of AToms that are FIXed
+Indices of AToms that are FIXed along the X direction
+Indices of AToms that are FIXed along the Y direction
+Indices of AToms that are FIXed along the Z direction
+Index for the ATomic SPHeres of the atom-projected density-of-states
+Integer governing the internal use of BOXCUT - not a very good choice of variable name
+Index for the COULOMB treatment
+Integer that governs the CUT-off for COULomb interaction
+Integer for second-order EIGenvalues from Response-Function
+IMaGe MOVEs
+IMaGe WaveFunction STORage
+INCLude VKB
+INTerpolation for eXchange-Correlation
+INVerse OVerLap: BLocK-diagonal matrix applied SLICED
+Input-Output MODE
+IONic MOVEs
+Integer for PReConditioning of ELectron response
+Integer for PReConditioner of Force Constants
+Index for QPoinT generation
+Integer for the choice of the RANDOM number generator
+Integer that governs the ReaDing of 1st-order DEN file
+Integer that governs the ReaDing of _1WF files
+Integer that governs the ReaDing of COUPling block
+Integer that governs the ReaDing of BS_EIG file
+Integer that governs the ReaDing of RESOnant block
+Integer that governs ReaDing of CHecK-Point files for the GW 1-RDM
+Integer that governs the ReaDing of DDB file
+Integer that governs the ReaDing of DDK wavefunctions, in _1WF files
+Integer that governs the ReaDing of density DEN file
+Integer that governs the ReaDing of Kinetic energy density KDEN file
+Integer that governs the ReaDing of DVDB file
+Integer to ReaD the EFfective MASses from...
+Integer that governs the ReaDing of the HAYDOCK restart file
+Integer that governs the ReaDing of QuasiParticle Structure
+Integer that governs the ReaDing of the SCReening
+Integer that governs the ReaDing of the SUSCEPtibility
+Integer that governs the ReaDing of _VDW files
+Integer that governs the ReaDing of _WFK files
+Integer that governs the ReaDing of the grid _WFK file on the FINE grid
+Integer that governs the ReaDing of _WFQ files
+Integer for Self-Consistent-Field cycles
+Integer for level of SECURity choice
+Integer governing the computation of STATic IMaGes
+Integer for STATus file rate
+Integer for STATus file SHiFT
+Integer for choice of STorage of WaveFunction at each k point
+Index of the highest VALENCE band
+Index of eXchange-Correlation functional
+Index of eXchange-Correlation functional used for self-energy calculations (SIGMA)
+Integer for the eXchange-Correlation applied to the electron-POSITRON interaction
+Index of the XC ROTation method used to calculate first-order exchange-correlation potential in non-collinear DFPT calculations
+index -J- for DaTaSETs
+include a JELLium SLAB in the cell
+electric/displacement FIELD DIRection
+value of J for PAW+U
+K wavevectors for BERRY phase computation
+K - PoinTs
+K PoinT BOUNDarieS
+K-PoinTs for GW calculations
+K - PoinTs NoRMalization
+K-PoinTs re-Normalized and Shifted
+K-PoinTs re-Normalized and Shifted, for the Hartree-Fock operator
+KPoinTs OPTion
+K - PoinTs grid: Real space LATTice
+K - PoinTs grid: Real space LENgth
+Kohn Sham Structure file FORMat
+LAMB shielding SIGma
+LDA minus half
+value of angular momentum L for EXact EXCHange
+LOCAL ReaD WaveFunctions
+LOTF CLASSIC model for glue model
+LOTF Number of ITerations
+LOTF max Number of NEIGhbours
+LOTF VERSION of MD algorithm
+value of angular momentum L for PAW+U
+LongWave calculation of FLEXOelectricity related spatial dispersion tensors
+LongWave calculation of NATural OPTical activity tensor
+LongWave calculation of dynamical QuaDRuPoLes tensor
+MACRO variable that activates the determination of the U and J parameter (for the PAW+U calculations)
+MAGnetization CONstraint LAMBDA parameter
+turn MAGnetization CONstraint ON
+MAXimum Number of CPUS
+MAXimum Electric field STEP
+MAXimum Number of SYMetries
+Maximum number of BANDs
+Many Body Perturbation Theory SCISSor operator
+Maximum DEGree of the polynomial for spectrum FILTERing algorithms
+Model Dielectric Function, EPSilon INFinity
+Molecular Dynamics TEMPeratures
+Molecular Dynamics WALL location
+MEMory TEST
+Minimal Energy Path search: MaXimum allowed STEP size
+Minimal Energy Path ordinary differential equation SOLVER
+MIXed PRECision
+Maximum of nGFFT
+Maximum of nGFFT for the Double Grid
+MIXing coefficients for ALCHemical potentials
+MIXing Electronic Structure IMAGE Factors
+MOLecular DYNamics
+Maximum number of Plane Waves
+Maximum number of Q-space GRID points for pseudopotentials
+Maximum number of Q-wavevectors for the 1-dimensional GRID  for the Double Grid in PAW
+Number of AToms in CONstraint equations
+Number of Atoms that are FIXed
+Number of Atoms that are FIXed along the X direction
+Number of Atoms that are FIXed along the Y direction
+Number of Atoms that are FIXed along the Z direction
+Number of ATOMs
+Number of AToms on which PAW+U is applied
+Number of AToms ReaD
+Number of ATomic SPHeres for the atom-projected density-of-states
+Number of ATomic SPHeres for the l-projected density-of-states in EXTRA set
+Number of ATomic potential (V) energy SHIFTs (per atom)
+Number of BANDs
+Number of BANDs for (Hartree)-Fock exact exchange
+Number of BANDs in the KSS file
+Number of BanDs in a BLOCK
+Number of BanDs for the BUFfer
+Number of BERRY phase computations
+Number of BLOCKs in the LOBPCG algorithm
+Norm-Conserving pseudopotentials - use XC Core-Correction in G-SPACE
+Number of CONstraint EQuations
+Print netCDF output files
+NetCdf TIME between output of molecular dynamics informations
+Number of DIVisions of K lines
+Number of DIVisions for the SMallest segment
+Number of DaTaSETs
+Number of DYNamical IMAGEs
+Nudged Elastic Band ALGOrithm
+Nudged Elastic Band variable CELL ALGOrithm
+Nudged Elastic Band: SPRING constant
+Number of ELECTrons
+Number of FFT points
+Number of FFT points for the Double Grid
+Number of FREQuencies along the IMaginary axis
+Nth FREQuency Moment of the Imaginary part of the Dielectric Matrix
+Number of FREQuencies along the REal axis
+Number of FREQuencies for the SPectral function
+Number of Grid points for Fast Fourier Transform
+Number of Grid points for Fast Fourier Transform: Double Grid
+Number of Grid points for K PoinTs generation
+Number of Grid points for Q PoinTs generation
+Number of IMAGEs
+Number of K-points defining the PATH
+Number of K - Points
+Number of K-PoinTs for GW corrections
+Number of K - Points for (Hartree) Fock exact exchange
+Number of LINE minimizations
+Non LOCal ALGorithm
+Non LOCal MEMOry
+Number of NOSe masses
+NON LOcal Operator (YLM version) COUNTer
+Number of Non-Self Consistent LOops
+Number of Non-Self Consistent LOops for (Hartree)-Fock exact exchange
+Number of OBJects
+Number of OMEGA to evaluate the Spectral Function
+Number of OMEGA(S) along the Imaginary axis
+Number of OMEGA to evaluate the Sigma Real axis Derivative
+Output NON-LINEAR INFOrmation
+NORMalize atomic PAW+U projector
+NOSE thermostat INERTia factor
+Number of mpi Processors used for ScaLapacK calls
+Number of Processors at the BAND level
+Number of Processors at the FFT level
+Number of Processors for (Hartree)-Fock exact exchange
+Number of Processors at the IMAGE level
+Number of Processors at the SPin and K-Point Level
+Number of Processors at the SPin and K-Point Level
+Number of Processors at the PERTurbation level
+Number of PSeudoPotentials to be read
+Number of PSeudoPotentials that are 
+Number of Processors at the SPINOR level
+Number of PULAY ITerations for SC mixing
+Number of Particle VELocities
+Number of PlaneWaves for EPSilon (the dielectric matrix)
+Number of PlaneWaves in the KSS file
+Number of PlaneWaves for SIGma eXchange
+Number of PlaneWaves for WaveFunctioNs
+Number of Q - POINTs
+Number of Quasi Fermi-Dirac excited carriers
+Number of Q-PoinTs for the Dielectric Matrix
+Nth - SCaling Function ORDER
+Number of SHIFTs for K point grids
+Number of SHIFTs for Q point grids
+Number of SPin-DENsity components
+Number of SPINORial components of the wavefunctions
+Number of SPin POLarization
+Number of (non-)self-consistent field STEPS
+Number of SYMmetry operations
+Number of TIME steps
+Number of TIME steps for IMAGE propagation
+Number of TYPe of atoms that are 
+Number of TYPes of AToms
+Number of TYPe of atoms that are 
+NUClear DIPole MOMents
+NUClear site Electric Field Gradient
+NUClear site Fermi Contact term
+Number of WaveFunctionS HISTory
+Number of Z reduced coordinates that define the spatial CHEMical POTential
+OBJect A: list of AToms
+OBJect A: AXis
+OBJect A: Number of atoms
+OBJect A: Repetition Factors
+OBJect A: ROtations
+OBJect A: TRanslations
+OBJect B: list of AToms
+OBJect B: AXis
+OBJect B: Number of atoms
+OBJect B: Repetition Factors
+OBJect B: ROtations
+OBJect B: TRanslations
+OCCupation numbers
+OCCupation OPTion
+OMEGA to evaluate Sigma along the Imaginary axis D: MAXimal value
+OMEGA to evaluate the Sigma Real axis Derivative: MAXimal value
+OPTimize the CELL shape and dimensions
+OPTions for the DRIVER
+OPTions for the calculation of FORCES
+OPTion for the calculation of Non-Linear eXchange-Correlation Core Correction
+OPTion for the computation of STRESS
+ORBital MAGnetization
+ORThogonalisation ALGorithm
+PAPI OPTion
+activate PARALelization over (paw) ATOMic sites
+activate PARALelization over K-point, G-vectors and Bands
+Activate PARALlelization over Response Function perturbations
+PAW - use ComPleX rhoij OCCupancies
+PAW - add CROSS term in oscillator strengths
+PAW - Energy CUToff for the Double Grid
+PAW: print band structure in the FAT-BaND representation
+PAW - L angular momentum used to CUT the development in moments of the Densities
+PAW - maximum L used in the spherical part MIXing
+PAW - MIXing is done (or not) on the (fine) Double Grid
+PAW - Flag for exact computation of gradients of NHAT density in eXchange-Correlation.
+PAW - Number of PHI angles used to discretize the sphere around each atom.
+PAW - Number of THETA angles used to discretize the sphere around each atom.
+PAW - only compute Non-Zero LM-moments of the contributions to the density from the spheres
+PAW - OPTion for the MIXing of the spherical part
+PAW - OPTion for the computation of the OSCillator matrix elements
+PAW - spheres OVerLaP allowed (in percentage)
+PAW PRinT band
+PAW PRinT K-point
+PAW: PRinT total physical electron DENsity
+PAW: PRinT partial DOS contributions
+PAW: PRinT VOLume
+PAW: PRinT WaveFunctions
+PAW - option for SPiN-ORBit coupling
+PAW - option for the STorage of G_l(r).YLM(r)
+PAW - SUSceptibility, inclusion of HAT (compensation charge) contribution
+PAW+macro_UJ, ATom number
+PAW+macro_UJ, sphere RADius
+PAW+macro_UJ, potential shift (V)
+PAW - option for the USE of CPrj in memory (cprj=WF projected with NL projector)
+PAW - choice for eXchange-Correlation DEVelopment (spherical part)
+PHonons: INTegration METHod
+PHonons: Number of DIVisions for sampling the SMallest segment
+PHonons: Number of Grid points for Q-PoinT mesh.
+PHonons: Number of Q-points defining the PATH
+PHonons: Number of Q-SHIFTs
+Phonons: Q-PATH
+PHonons: Q-SHIFTs for mesh.
+PHonons: SMEARing factor
+PHonons: frequency(W) STEP.
+Path Integral fictitious MASSes
+Path-Integral Molecular Dynamics: CONSTRAINT to be applied on a reaction coordinate
+Path Integral coordinate TRANSFORMation
+Projected Local Orbital WANnier functions BAND Final
+Projected Local Orbital WANnier functions BAND Initial
+Projected Local Orbital WANnier functions COMPUTATION
+Projected Local Orbital WANnier functions, Index of ATOM
+Projected Local Orbital WANnier functions,  Index of Translation.
+Projected Local Orbital WANnier functions,  L values to use for CALCulation
+Projected Local Orbital WANnier functions, Number of ATOMs
+Projected Local Orbital WANnier functions,  NumBer of L values
+    mnemonics="""Projected Local Orbital WANnier functions,  Number of Translation on which the real space values of
+Projected Local Orbital WANnier functions,  PROJectors values to use for CALCulation
+Projected Local Orbital WANnier functions,  activate REAL SPACE calculation.
+POLarization for CENtrosymmetric geometry
+POSitron computation of DOPPLER broadening
+POSITRON calculation
+POSitron calculation: max. Number of STEPs for the two-component DFT
+POSitron calculation: OCCupation number for the positron
+POSitron calculation: TOLerance on the DiFference of total Energy
+POSitron calculation: TOLerance on the DiFference of Forces
+Plasmon Pole Model FReQuency
+Plasmon Pole MODEL
+PREPAre LongWave calculation
+PREPAre Non-Linear response calculation
+PREPAre GKK calculation
+PREPare Self-Consistent PHONon calculation
+PRinT 1-DiMensional potential and density
+PRinT by ATom LIST of ATom
+PRinT Band-By-Band decomposition
+PRinT output for BoLTZTRaP code
+Integer that governs PrinTing of CHecK-Point files for the GW 1-RDM
+PRinT Crystallographic Information File
+PRinT macroscopic CURRENT density
+PRinT the Derivative Data Base file
+PRinT the DENsity
+PRinT integral of DENsity inside atomic SPHeres
+PRinT DIPOLE
+PRinT the Density Of States
+PRinT the Density Of States with M decomposition
+PRinT Electron BANDS
+PRint EFfective MASs data
+PRinT EIGenenergies
+PRinT Electron Localization Function (ELF)
+PRinT EVK - Elements of the Velocity matrix at wavevector K
+PRinT FULL 1st-order WaveFunction
+PRinT Fermi SURFace file
+PRinT the Gradient of electron DENsity
+PRinT the GEOmetry analysis
+PRinT the GKK matrix elements file
+PRinT the GSR file
+PRinT the HISTory file
+PRinT the Kinetic energy DENsity
+PRinT the K-PoinTs sets
+PRinT the Laplacian of electron DENsity
+PRint NABLA
+PRinT NESTing function
+PRinT PHonon BANDS
+PRinT the PHonon Density Of States
+PRinT PHonon iso-SURFace
+PRinT POSCAR file
+PRinT total POTential
+PRinT PROCAR file
+PRint the PSPS file
+PRinT the SPin CURrent density
+PRinT the STM density
+PRinT the SUSCEPtibility file (the irreducible polarizability)
+PRinT V CouLoMB
+PRinT Van Der Waals file
+PRinT V_HArtree
+PRinT V_HXC
+PRinT VOLume
+PRinT VOLume for IMaGes
+PRinT V_PSeudoPotential
+PRinT V_XC
+PRinT WANT file
+PRinT the WaveFunction
+PRinT Wavefunction file on the FULL mesh
+PRinT L ORBital MAGnetic moment inside PAW spheres
+PRinT an XML output
+PoinT CHARGEs
+PoinT GROUP number for the MAgnetic space group
+Particle VELocity MAXimum
+Plane Wave UNBALancing: THRESHold for balancing procedure
+Q thermostat MASS
+Q-wavevector of the PERTurbation
+Q PoinT
+Q-PoinTs for the Dielectric Matrix
+Q-PoinT re-Normalized
+Q PoinTs NoRMalization
+QPoinTs OPTion
+Q - PoinTs grid: Real space LATTice
+QUADrupole MOMents
+RANDOM ATomic POSitions
+Radii of the ATomic spheres SMearing
+Radii of the ATomic SPHere(s)
+Radii of the ATomic SPHere(s) in the EXTRA set
+Radius of the CUT-off for coulomb interaction
+RECursion - initial guess  of the FERMI Energy
+RECursion - Grid RATIO
+RECursion - Number of point for PATH integral calculations
+RECursion - Number of RECursions
+RECursion - TROTTer parameter
+RECursion - CUTing Radius
+RECursion - TEST on Electron Gas
+RECursion - TOLerance on the difference of electronic DENsity
+REDuced Displacement FIELD
+REDuced Electric FIELD
+REDuced Electric FIELD BAR
+RESTART from (X,F) history
+Response Function: 2nd Derivative of wavefunctions with respect to K
+Response Function: mixed 2nd Derivative of wavefunctions with respect to K and electric field
+Response Function (2nd order Sternheimer equation): 1st PERTurbation DIRection
+Response Function (2nd order Sternheimer equation): 2nd PERTurbation DIRection
+Response Function: ATomic POLarisation
+Response Function with respect to Derivative with respect to K
+Response Function: DIRections
+Response Function with respect to the ELectric FielD
+Response Function with respect to MAGNetic B-field perturbation
+Response Function METHod
+Response Function with respect to PHONons
+Response Function with respect to STRainS
+Response Function with respect to STRainS with the energy REFerence at the average electrostatic potential
+Response Function, USER-defined
+RHO QuasiParticle MIXing
+Real space PRIMitive translations
+Real space PRIMitive translations, Dimensional
+SCALE CARTesian coordinates
+Self Consistent PHONon SUPERCELL
+Self Consistent PHONon TEMPerature
+SHIFT for K points
+SHIFT for Q points
+SIGN of PERMutation potential
+jellium SLAB Wigner-Seitz RADius
+jellium SLAB BEGinning edge along the z-direction
+jellium SLAB ENDing edge along the z-direction
+ScaLapacK matrix RANK Per Process
+SMeared DELTA function
+Spin-Orbit treatment for each PSeudoPotential
+SPectral BROADening
+SPace Group: AXes ORientation
+SPace Group: ORIGin
+SPace GROUP number
+SPace GROUP number defining a MAgnetic space group
+SPIN for AToms
+SPIN-MAGNetization TARGET
+SPectral METHod
+SPin-ORBit SCaLing
+Scanning Tunneling Microscopy BIAS voltage
+STRess FACTor
+STRING method ALGOrithm
+STRess PRECONditioner
+STRess TARGET
+SYMmetries, Anti-FerroMagnetic characteristics
+    mnemonics=r"SYMmetryze $\chi_0$",
+SYMmetrize the DYNamical MATrix
+SYMMORPHIc symmetry operation selection
+SYMmetry in REaL space
+SYMmetrization of SIGMA matrix elements
+Time-Dependent dft: MAXimal kohn-sham ENErgy difference
+TOLerance on CUMulant
+Time-Dependent dft: Maximal number of EXCITations
+Thomas-Fermi KINetic energy FUNCtional
+Thomas-Fermi-Weizsacker: TOLerance on the DiFference of total Energy, for initialization steps
+TIMe 1st order REVersal
+TIMing OPTion
+TaiL maximum Number of PReConditioner Conjugate Gradient iterations
+TaiL expansion RADIUS
+Translation NON-Symmorphic vectors
+TOLerance on the DiFference of total Energy
+TOLerance on the DiFference of Forces
+TOLerance on the mean total energy for IMaGes
+TOLerance on the MaXimal Difference in Energy
+TOLerance on the MaXimal Force
+TOLerance on the Relative Difference of Eigenenergies
+TOLerance on the Relative diFference of Forces
+TOLERANCE for SYMmetries
+TOLerance on the potential V(r) ReSidual
+TOLerance on the Wavefunction Residuals
+TOLerance on WaveFunction squared Residual at the DIAGOnalization level
+Temperature (PHYSical) of the ELectrons
+Temperature of SMEARing
+TYPe of AToms
+calculation of the screened interaction U with the Constrained RPA method
+For the calculation of U with the Constrained RPA method, gives correlated BANDS
+For the calculation of U with the Constrained RPA method, gives energy WINDOW
+Upper limit on DaTa SETs
+value of U for PAW+U
+USE the GEMM routine for the application of the NON-Local OPerator
+USE NON-SCF calculation of GKK matrix elements (electron phonon)
+USE ScaLapacK
+USE of an initial Density MATrix in Paw+U
+USE Dynamical Mean Field Theory
+USE of EXact EXCHange
+USE FOCK exact exchange
+USE Kinetic energy DENsity
+USE Projector Augmented Waves method
+USE PAW+U (spherical part)
+USE of PEAD formalism
+USE POTential ZERO
+USE RECursion
+USER Integer variable A
+USER Integer variable B
+USER Integer variable C
+USER Integer variable D
+USER Integer variable E
+USER Real variable A
+USER Real variable B
+USER Real variable C
+USER Real variable D
+USER Real variable E
+Use WaVeLet basis set
+USE eXchange-Correlation with NHAT (compensation charge density)
+USE YLM (the spherical harmonics)
+VACancies LiST
+VACancies NUMber
+VACUUM identification
+VACuum WIDTH
+V (potential) CUT-off GEOmetry
+vdW-DF MINimum Angular CUT-off
+    mnemonics="""vdW-DF Angle RATIO between the highest and lowest angles.""",
+vdW-DF Delta for Angles, MAXimum
+vdW-DF Delta for Angles, MINimum
+vdW-DF D-mesh CUT-off
+    mnemonics="""vdW-DF, between the highest and
+vdW-DF Distance for SOFTening.
+vdW-DF G-space CUT-off
+vdW-DF Number of D-mesh PoinTS
+vdW-DF Number of G-mesh PoinTS
+vdW-DF Number of Q-mesh PoinTS
+vdW-DF Number of R-PoinTS
+vdW-DF Number of SMOOTHening iterations
+vdW-DF PHI value SOFTening.
+vdW-DF Q-mesh CUT-off
+vdW-DF, between highest and lowest Q, RATIO.
+vdW-DF Real-space CUT-off
+vdW-DF radius SOFTening.
+vdW-DF energy calculation THRESHOLD
+vdW-DF global TOLERANCE.
+vdW-DF TWEAKS.
+vdW-DF ZAB parameter
+Van Der Waals Number of interacting FRAGments
+Van Der Waals correction from Wannier functions in SUPERCELL
+Van Der Waals TOLerance
+Van Der Waals TOLerance for 3-Body Term
+Van Der Waals TYPe of FRAGment
+Van Der Waals eXchange-Correlation functional
+VELocity
+VELocity of the CELL parameters
+VIScosity
+VLOCal Radial CUToff
+potential -V- for the PeRTuRBation
+Wannier90- INItial PROJections
+Wannier90- PRINT UNKp.s file
+WaveFunctions INITialization
+WaveFunctions MIXing factor
+WaveFunction OPTimisation ALGorithm
+write files
+WeighTs for AToms in CONstraint equations
+WeighTs for K points
+WeighTs for the current Q-points
+WaVeLet BIGDFT Comparison
+WaVeLet Coarse grid Radius MULTiplier
+WaVeLet Fine grid Radius MULTiplier
+WaVeLet H step GRID
+WaVeLet Number of GAUSSians
+WaVeLet maximum Number of PReConditioner Conjugate Gradient iterations
+EXchange-only 1-Reduced Density Matrix
+eXchange-Correlation - DENsity POSitivity value
+eXchange-Correlation - TAU kinetic energy DENsity POSitivity value
+Value of the c parameter in the eXchange-Correlation TB09 functional
+vectors (X) of atom positions in CARTesian coordinates
+eXchange Correlation functional LEVEL
+vectors (X) of atom positions in REDuced coordinates
+X(position) in REDuced coordinates of the SPHeres for dos projection in the EXTRA set
+XYZ FILE input for geometry
+Z-CUT
+ZEEMAN FIELD
+Z (charge) of the IONs for the different TYPes of AToms
+charge -Z- of the NUCLeus
+Temperature MESH
+PRinT Kleynman-Bylander Form Factors
+SIGMA: Number of Grid points for K PoinTs generation
+SIGMA: Number of SHIFTs for K point grids
+SHIFT for K points
+Time-Dependent Electric Field TYPE
+Time-Dependent Electric Field TZERO
+Time-Dependent Electric Field EZERO
+Time-Dependent Electric Field POLarization
+Time-Dependent Electric Field INDUCED VECtor POTential
+Time-Dependent EXPonential ORDER
+Time-Dependent PROPAGATOR
+Time-Dependent PRinT STRide
+Time-Dependent calculation RESTART
+Time-Dependent Self-Consistent NMAX
+Time-Dependent propagation Self-Consistent THReshold
+WaveFunction at K TASK
+SIGMA: Band SUM RANGE
+PRINT ELIASHberg function.
+SIGMA Energy-range.
+EPH TOLeranceS on Integral of DELTA.
+EPH PHonon mode RANGE.
+EPH PHonon mode RANGE (Frequency)
+TRANSPORT: Number of Grid points for K PoinTs integration in transport computations
+Iterative Boltzmann Equation: ABSolute TOLerance for convergence
+Iterative Boltzmann Equation: ALPHA Mixing factor
+Iterative Boltzmann Equation: max Number of ITERations
+Iterative Boltzmann Equation PREPare
+EPH PRINT spectral decomposition of SCATTERING RATES as a function of omega phonon.
+EPH RESTART.
+Electron-PHonon: use STERNheimer approach to replace sum over empty states.
+KERANGE PATH
+SYMmetrize V1 DFPT SCF potentials
+DVDB ADD Long-Range part when interpolating DFPT potentials.
+EPH Number of Processors for Perturbations, Q-points, Bands, K-points, Spin.
+EPH FORCE Fourier Transform Interpolation of DFPT potentials.
+GET the KS POTential from FILEPATH
+GET the wavefunctions from WFK PATH
+GET the fine wavefunctions from FILEPATH
+GET the k+q wavefunctions from WFQ PATH
+GET the DDB from FILEPATH
+GET the DVDB file from FILEPATH
+GET the DEN file from FILEPATH
+GET the SCR file from FILEPATH
+Electron-Phonon: Energy CUToff for OSCillator matrix elements
+OUTPUT FILE
+INput DATA PREFIX
+OUTput DATA PREFIX
+TeMPorary DATA PREFIX
+PseudoPotential DIRectory PATH
+SUPERCELL LATTice
+PSEUDOpotentialS
+initialize the crystalline STRUCTURE from ...
+DVDB R-SPACE CELL
+DVDB Q-DAMPing
+GET the SIGEPH from FILEPATH
+BRAVais
+EPH doping
+EPH PHonon FACTor for energy WINdow
+Radius of the Interatomic Force Constant SPHere
+Activate the RMM-DIIS eigensolver for GS calculations.
+Save memory in the RMM-DIIS eigensolver.
+USE EXTended FPMD model
+EXTended FPMD: Number of Bands
+EXTended FPMD: Number of Bands at CUT
+EXTended FPMD: Number of BanDs for the BUFfer
+DIPole-QUADdrupole interaction
+QUADdrupole-QUADdrupole interaction
+    mnemonics=r"USE OLD CHI implementation for evaluating $\chi^{0}$ with eigenvalues taken from a QPS file",
+    mnemonics=r"GSTORE ComPLEX dimension",
+    mnemonics=r"GSTORE WITH Velocity_k",
+    mnemonics=r"GSTORE K-point ZONE",
+    mnemonics=r"GSTORE Q-point ZONE",
+    mnemonics=r"GSTORE K-FILTER",
+    mnemonics=r"GSTORE GMODE",
+    mnemonics=r"GSTORE Band RANGE",
+GET the GSTORE.nc from FILEPATH
+GET the ABIWAN.nc from FILEPATH
+GET the ABIWAN.nc from dataset
+GET the GWAN.nc from FILEPATH
+GET the GWAN.nc from dataset
+GSTORE Energy  RANGE
+GWR Number of Processors for K-vectors, G-vectors, Tau-points, Spin.
+GWR Unit Cell, Supercell BATCH SIZE.
+GWR TASK
+GWR Number of TAU points.
+GWR CHI ALGOrithm.
+GWR RPA Number of CUToff
+GWR SIGMA ALGOrithm.
+GWR BOX CUT-off MINimum
+GWR MAX Head Wings Transition ENErgy
+GWR REGularization TERM
+OPTion for Double-Counting MAGnetic term in PAW+U formalism
+GWPT Number of Processors for Wavevector sum, Perturbations, Q-points, Bands, K-points, Spin.
+OPTION for XG_NONLOP routines
+GET the DRHODB from...
+GET the DRHODB file from FILEPATH
+Integer that governs the ReaDing of DRHODB file
+GET the VPQ.nc from FILEPATH
+GET the VPQ.nc from dataset
+Variational Polaron eQuations: A_nk-coefficients SEED
+Variational Polaron eQuations: Polaron KIND
+Variational Polaron eQuations: AVeraGe matrix-elements at Gamma
+Variational Polaron eQuations: INTERPolation
+Variational Polaron eQuations: Number of polaronic STATES
+Variational Polaron eQuations: Number of iteration STEPs
+Variational Polaron eQuations: SELECT polaronic state
+Variational Polaron eQuations: SCALE MESH for polaron wavefunction
+Variational Polaron eQuations: TOLerance on the Gradient ReSidual
+Variational Polaron eQuations: Gaussian PaRameters -- electronic ENERGY
+Variational Polaron eQuations: TRanslation VECtor
+Variational Polaron eQuations: Gaussian PaRameters -- localization LENGTH
+Variational Polaron eQuations: TRANSLATE solutions
+Variational Polaron eQuations: Number of STEPs with ORThogonalisation
+Variational Polaron eQuations: MIXing FACTor
+Electron-PHonon: FIX K-point OR Q-point
+Electron-PHonon: FIX WAVE-VECtor
+Electron-PHonon: Band RANGE
+ORACLE in chebyshev filtering algorithm: FACTOR
+ORACLE in chebyshev filtering algorithm: MINimal OCCupancy
