@@ -21,7 +21,13 @@ if !has("g:abivim_supercomment")
     let g:abivim_supercomment = true
 endif
 
-" >Colors
+" }}}
+
+
+
+
+" Colors Settings: {{{
+" !PUSH AT THE END OF FILE!
 
 " Checking first if we choosed Link, or custom colors :
 

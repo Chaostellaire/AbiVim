@@ -1,0 +1,21 @@
+### update_abivim.sh: Bash script updater of the .vim files, will update the dictionnaries and syntax
+                  #  Will also add new global variables for naming and coloring
+# Chaostellaire
+# version 2.0
+
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+if [ ! "$#" -eq 1 ]; then; echo -e "\033[32m Please provide the mkdocs location of abiniit_variables.py \033[0m"; exit 1 ;fi
+DOC="$1"
+
+
+# Updating dictionnaries
+grep 'abivarname=' "$DOC" | sed -E "s/.*abivarname=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abivar.txt"
+grep 'mnemonics=' "$INPUT_FILE" | sed -E "s/.*mnemonics=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abimnemo.txt"
+grep 'varset=' "$DOC" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abiset.txt"
+
+# make temporary unique set files
+sort "$SCRIPT_DIR/dict/abiset.txt" | uniq > temp
+
+
+
