@@ -5,17 +5,24 @@
 
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-if [ ! "$#" -eq 1 ]; then; echo -e "\033[32m Please provide the mkdocs location of abiniit_variables.py \033[0m"; exit 1 ;fi
+if [ ! "$#" -eq 1 ]; then echo -e "\033[32m Please provide the mkdocs location of abiniit_variables.py \033[0m"; exit 1 ;fi
 DOC="$1"
 
 
 # Updating dictionnaries
 grep 'abivarname=' "$DOC" | sed -E "s/.*abivarname=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abivar.txt"
-grep 'mnemonics=' "$INPUT_FILE" | sed -E "s/.*mnemonics=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abimnemo.txt"
+grep 'mnemonics=' "$DOC" | sed -E "s/.*mnemonics=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abimnemo.txt"
 grep 'varset=' "$DOC" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT_DIR/dict/abiset.txt"
 
 # make temporary unique set files
 sort "$SCRIPT_DIR/dict/abiset.txt" | uniq > temp
+
+linenb=$(grep -Pn "Colors Settings: {{{" "$SCRIPT_DIR/abivim.vim" | grep -Po '^(\d+)')
+
+#destroy previous colors settings
+sed -i "${linenb},\$ d" "$SCRIPT_DIR/abivim.vim"
+
+
 
 
 
