@@ -1,8 +1,9 @@
-### ectract_var.sh : main file for extraction and installation of vim 
-                  #  component for autocompletion of abinit's input
-# Chaostellaire
-# version 1.2
-#
+# ------------------------------------------------------------------
+# FILE: abivim.sh 
+# DESCRIPTION: Main script, for setting up you .vim without a vim plugging manager
+# Author: Chaostellaire <harmonie.lebrun1@gmail.com>
+# Last modified: 21/08
+# -----------------------------------------------------------------
 
 usage(){
 echo -e ""
@@ -60,9 +61,11 @@ echo -e "                           modify it in abisyntax.sh               "
 echo -e "                                                                   "
 echo -e "                                                                   "
 }
+
 msg(){
 echo -e " --- $1 \033[0m"
 }
+
 verbmsg(){
 if [ "$verb" = true ]; then echo -e "\033[32m >>> \033[0m $1"; fi
 }
@@ -89,6 +92,17 @@ vimconfigparser(){
     if [ "$#" -eq 0 ]; then echo -e "\033[31m ERROR ---- not enough arguments please provide INPUT file"; exit 1; fi
     while [ "$#" -gt 0 ];do
         case $1 in
+            help | -h | --help)
+                usage_vimconfig
+                exit 0
+                ;;
+            auto)
+                #DO AUTO STUFF
+                break
+                ;;
+            *)
+                if [ "$#"
+
         esac
     done
 }
@@ -97,7 +111,7 @@ parser(){
     if [ "$#" -eq 0 ]; then echo -e "\033[31m ERROR ---- not enough arguments please provide INPUT file"; exit 1; fi
     while [ "$#" -gt 0 ];do
         case $1 in
-            -h | --help)
+            -h | --help | help)
                 usage
                 exit 0
                 ;;

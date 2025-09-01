@@ -7,7 +7,6 @@ INPUT_FILE=$1
 OUTPUT_LOC=$2
 verb=$3
 vimdir=$4
-custom=$5
 #fetch every type of var :
 #19 sets, 5 types....
 grep 'varset=' "$INPUT_FILE" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$OUTPUT_LOC/abiset.txt"
@@ -27,28 +26,6 @@ sky="#89DCEB"
 sapphire="#74C7EC"
 blue="#89B4FA"
 lavender="#B4BEFE"
-
-
-#assume we go with custom coloring
-declare -A ctermcolors
-declare -A guicolors
-declare -A setlink
-guicolors=( ["basic"]="$sapphire" ["bse"]="$sapphire" ["dev"]="$mauve" 
-    ["dfpt"]="$red" ["dmft"]="$red" ["eph"]="$red" ["ffield"]="$red"
-    ["files"]="$pink" ["geo"]="$teal" ["gstate"]="$sapphire" ["gw"]="$maroon"
-    ["gwr"]="$maroon" ["internal"]="$flamingo" ["paral"]="$yellow" ["paw"]="$sapphire"
-    ["rlx"]="$red" ["rttddft"]="$red" ["vdw"]="$maroon" ["w90"]="$maroon" )
-
-#not up to date
-ctermcolors=( ["basic"]="1" ["bse"]="3" ["dev"]="4" ["dfpt"]="2" ["dmft"]="9" ["eph"]="9"
-    ["ffield"]="9" ["files"]="11" ["geo"]="9" ["gstate"]="1" ["gw"]="129" ["gwr"]="129"
-    ["internal"]="8" ["paral"]="11" ["paw"]="14" ["rlx"]="9" ["rttddft"]="5" ["vdw"]="5" ["w90"]="5" )
-
-setlink=( ["basic"]="Type" ["bse"]="Type" ["dev"]="Identifier" ["dfpt"]="Conditional" ["dmft"]="Conditional" ["eph"]="Conditional"
-    ["ffield"]="Conditional" ["files"]="Boolean" ["geo"]="Operator" ["gstate"]="Type" ["gw"]="String" ["gwr"]="String"
-    ["internal"]="Comment" ["paral"]="Boolean" ["paw"]="Type" ["rlx"]="Conditional"
-    ["rttddft"]="Conditional" ["vdw"]="String" ["w90"]="String" )
-
 
 
 sort "$OUTPUT_LOC/abiset.txt" | uniq > temp
