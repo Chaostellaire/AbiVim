@@ -26,25 +26,6 @@ if !has("g:abivim_error_on_save")
 endif
 " }}}
 
-" Static Colors Settings: {{{
-"
-
-if g:abivim_supercomment
-    if !has("g:abivim_color_supercomment"):
-        let g:abivim_color_supercomment = "#A6E3A1"
-    endif
-endif
-
-" use _color_ to use a custom color. please specify with this format:
-" \"bg=<color> fg=<color>"
-if !has("g:abivim_link_repeat"):
-    let g:abivim_link_repeat = "Error"
-endif
-
-" }}}
-
-
-" Auto-generated colors, updated with the variable files.
 " Colors Settings: {{{
 " ! PUSH AT THE END OF FILE !
 

@@ -12,21 +12,6 @@ vimdir=$4
 grep 'varset=' "$INPUT_FILE" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$OUTPUT_LOC/abiset.txt"
 
 # color definition from catpuccin_mocha
-rosewater="#F5E0DC"
-flamingo="#F2CDCD"
-pink="#F5C2E7"
-mauve="#CBA6F7"
-red="#F38BA8"
-maroon="#EBA0AC"
-peach="#FAB387"
-yellow="#F9E2AF"
-green="#A6E3A1"
-teal="#94E2D5"
-sky="#89DCEB"
-sapphire="#74C7EC"
-blue="#89B4FA"
-lavender="#B4BEFE"
-
 
 sort "$OUTPUT_LOC/abiset.txt" | uniq > temp
 
@@ -34,39 +19,43 @@ mkdir -p "$vimdir/syntax"
 if [ -f "$vimdir/syntax/abi.vim" ]; then rm -f "$vimdir/syntax/abi.vim";fi
 
 
-echo "\" abi syntax file for vim" > "$vimdir/syntax/abi.vim"
+echo "\" abinit input syntax file for vim" > "$vimdir/syntax/abi.vim"
 echo " " >> "$vimdir/syntax/abi.vim"
+
+#Configuration 
+
+echo "if g:abivim_color_custom" >> "$vimdir/syntax/abi.vim"
 
 # First define default groups
 while IFS= read -r sets; do
-    echo "highlight $sets ctermfg=${ctermcolors[$sets]} guifg=${guicolors[$sets]}" >> "$vimdir/syntax/abi.vim"
+    echo "    highlight $sets ctermfg=g:abivim_color_${sets} guifg=g:abivim_color_${sets}" >> "$vimdir/syntax/abi.vim"
 done < "temp"
+echo "    highlight Repeat guifg=g:abivim_color_repeatfg guibg=g:abivim_color_repeatbg" >> "$vimdir/syntax/abi.vim"
 
+echo "else" >> "$vimdir/syntax/abi.vim"
 # if we have not selected custom, link to vim theme
-if [ "$custom" = false ]; then
-    while IFS= read -r newsets; do
-        echo "highlight! link $newsets ${setlink[$newsets]} ">> "$vimdir/syntax/abi.vim"
-    done < "temp"
-fi
+while IFS= read -r newsets; do
+    echo "    highlight! link $newsets g:abivim_link_${newsets}">> "$vimdir/syntax/abi.vim"
+done < "temp"
+echo "    highlight! link Repeat g:abivim_link_repeat" >> "$vimdir/syntax/abi.vim"
 
 #done with unique list
 rm -f temp
 
+echo "" >> "$vimdir/syntax/abi.vim"
 echo "\" ============================" >> "$vimdir/syntax/abi.vim"
-
-
-n=$(wc -l "$OUTPUT_LOC/abiset.txt")
+echo "" >> "$vimdir/syntax/abi.vim"
 
 while IFS= read -r var && IFS= read -r sets <&3; do
   echo "syntax match $sets \"\<$var[0-9:?+]*\\c\>\"" >> "$vimdir/syntax/abi.vim"
 done < "$OUTPUT_LOC/abivar.txt" 3< "$OUTPUT_LOC/abiset.txt"
 
 # add comment detection :
-
+echo "" >> "$vimdir/syntax/abi.vim"
 echo "\" ============================" >> "$vimdir/syntax/abi.vim"
+echo "" >> "$vimdir/syntax/abi.vim"
 
 echo "syntax match Comment \"#.*\"" >> "$vimdir/syntax/abi.vim"
-echo "highlight BrightComment ctermfg=4 guifg=$green" >> "$vimdir/syntax/abi.vim"
-echo "syntax match BrightComment \"##.*\"" >> "$vimdir/syntax/abi.vim"
-echo "highlight Repeat guifg=#ed8796 guibg=#e6194b" >> "$vimdir/syntax/abi.vim"
-if [ "$custom" = false ]; then echo "highlight! link Repeat SpellBad" >> "$vimdir/syntax/abi.vim"; fi
+echo "if g:abvim_supercomment" >> "$vimdir/syntax/abi.vim"
+echo "    highlight BrightComment guifg=g:abivim_color_supercomment" >> "$vimdir/syntax/abi.vim"
+echo "    syntax match BrightComment \"##.*\"" >> "$vimdir/syntax/abi.vim"

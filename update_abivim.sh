@@ -17,10 +17,10 @@ grep 'varset=' "$DOC" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT
 # make temporary unique set files
 sort "$SCRIPT_DIR/dict/abiset.txt" | uniq > temp
 
-linenb=$(grep -Pn "Colors Settings: {{{" "$SCRIPT_DIR/abivim.vim" | grep -Po '^(\d+)')
+linenb=$(grep -Pn "Colors Settings: {{{" "$SCRIPT_DIR/abivim.vim" | grep -Po -m 1 '^(\d+)')
 
 #destroy previous colors settings
-sed -i "${linenb},\$ d" "$SCRIPT_DIR/abivim.vim"
+sed -i "\"${linenb},\$d\"" "$SCRIPT_DIR/abivim.vim"
 
 # add new colors
 echo "\" Colors Settings: {{{" >> "$SCRIPT_DIR/abivim.vim"
@@ -48,3 +48,5 @@ done < "temp"
 rm temp
 echo "" >> "$SCRIPT_DIR/abivim.vim"
 echo "\" }}}"  >> "$SCRIPT_DIR/abivim.vim" 
+
+./abisyntax.sh "$DOC" "$SCRIPT_DIR/dict" false "$SCRIPT_DIR" 
