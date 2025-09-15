@@ -28,17 +28,17 @@ echo "if g:abivim_color_custom" >> "$vimdir/syntax/abi.vim"
 
 # First define default groups
 while IFS= read -r sets; do
-    echo "    highlight $sets ctermfg=g:abivim_color_${sets} guifg=g:abivim_color_${sets}" >> "$vimdir/syntax/abi.vim"
+    echo "    exec 'highlight $sets guifg= ' . g:abivim_color_${sets}" >> "$vimdir/syntax/abi.vim"
 done < "temp"
-echo "    highlight Repeat guifg=g:abivim_color_repeatfg guibg=g:abivim_color_repeatbg" >> "$vimdir/syntax/abi.vim"
+echo "    exec 'highlight Repeat guifg= ' . g:abivim_color_repeatfg . ' guibg=' . g:abivim_color_repeatbg" >> "$vimdir/syntax/abi.vim"
 
 echo "else" >> "$vimdir/syntax/abi.vim"
 # if we have not selected custom, link to vim theme
 while IFS= read -r newsets; do
-    echo "    highlight! link $newsets g:abivim_link_${newsets}">> "$vimdir/syntax/abi.vim"
+    echo "    exec 'highlight! link $newsets ' . g:abivim_link_${newsets}" >> "$vimdir/syntax/abi.vim"
 done < "temp"
-echo "    highlight! link Repeat g:abivim_link_repeat" >> "$vimdir/syntax/abi.vim"
-
+echo "    exec 'highlight! link Repeat ' . g:abivim_link_repeat" >> "$vimdir/syntax/abi.vim"
+echo "endif" >> "$vimdir/syntax/abi.vim"
 #done with unique list
 rm -f temp
 
@@ -56,6 +56,7 @@ echo "\" ============================" >> "$vimdir/syntax/abi.vim"
 echo "" >> "$vimdir/syntax/abi.vim"
 
 echo "syntax match Comment \"#.*\"" >> "$vimdir/syntax/abi.vim"
-echo "if g:abvim_supercomment" >> "$vimdir/syntax/abi.vim"
-echo "    highlight BrightComment guifg=g:abivim_color_supercomment" >> "$vimdir/syntax/abi.vim"
+echo "if g:abivim_supercomment" >> "$vimdir/syntax/abi.vim"
+echo "    exec 'highlight BrightComment guifg= ' . g:abivim_color_supercomment" >> "$vimdir/syntax/abi.vim"
 echo "    syntax match BrightComment \"##.*\"" >> "$vimdir/syntax/abi.vim"
+echo "endif" >> "$vimdir/syntax/abi.vim"

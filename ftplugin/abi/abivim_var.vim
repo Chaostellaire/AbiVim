@@ -9,7 +9,7 @@
 
 " Global Settings: {{{
 
-" >Colors options
+" > Colors options
 
 if !exists("g:abivim_color_custom")
     let g:abivim_color_custom = 0
@@ -20,7 +20,26 @@ if !exists("g:abivim_supercomment")
 endif
 
 if !exists("g:abivim_error_on_save")
-    let g:abivim_error_on_save = 0
+    let g:abivim_error_on_save = 1
+endif
+
+
+" > Variable-type-free colors
+
+if !exists("g:abivim_color_repeatfg")
+    let g:abivim_color_repeatfg = '#000000'
+endif
+
+if !exists("g:abivim_color_repeatbg")
+    let g:abivim_color_repeatbg = "#b22222"
+endif
+
+if !exists("g:abivim_color_supercomment")
+    let g:abivim_color_supercomment = "#006400"
+endif
+
+if !exists("g:abivim_link_repeat")
+    let g:abivim_link_repeat = "Error"
 endif
 " }}}
 
@@ -89,41 +108,61 @@ else
 " >>Linkers
     if !exists("g:abivim_link_basic")
     let g:abivim_link_basic = "Type"
+    endif
     if !exists("g:abivim_link_bse")
     let g:abivim_link_bse = "Type"
+    endif
     if !exists("g:abivim_link_dev")
     let g:abivim_link_dev = "Type"
+    endif
     if !exists("g:abivim_link_dfpt")
     let g:abivim_link_dfpt = "Type"
+    endif
     if !exists("g:abivim_link_dmft")
     let g:abivim_link_dmft = "Type"
+    endif
     if !exists("g:abivim_link_eph")
     let g:abivim_link_eph = "Type"
+    endif
     if !exists("g:abivim_link_ffield")
     let g:abivim_link_ffield = "Type"
+    endif
     if !exists("g:abivim_link_files")
     let g:abivim_link_files = "Type"
+    endif
     if !exists("g:abivim_link_geo")
     let g:abivim_link_geo = "Type"
+    endif
     if !exists("g:abivim_link_gstate")
     let g:abivim_link_gstate = "Type"
+    endif
     if !exists("g:abivim_link_gw")
     let g:abivim_link_gw = "Type"
+    endif
     if !exists("g:abivim_link_gwr")
     let g:abivim_link_gwr = "Type"
+    endif
     if !exists("g:abivim_link_internal")
     let g:abivim_link_internal = "Type"
+    endif
     if !exists("g:abivim_link_paral")
     let g:abivim_link_paral = "Type"
+    endif
     if !exists("g:abivim_link_paw")
     let g:abivim_link_paw = "Type"
+    endif
     if !exists("g:abivim_link_rlx")
     let g:abivim_link_rlx = "Type"
+    endif
     if !exists("g:abivim_link_rttddft")
     let g:abivim_link_rttddft = "Type"
+    endif
     if !exists("g:abivim_link_vdw")
     let g:abivim_link_vdw = "Type"
+    endif
     if !exists("g:abivim_link_w90")
     let g:abivim_link_w90 = "Type"
+    endif
+endif
 
 " }}}

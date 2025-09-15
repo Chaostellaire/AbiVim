@@ -26,9 +26,9 @@ sed -i "${linenb},\$d" "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 echo "\" Colors Settings: {{{" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 echo "\" ! PUSH AT THE END OF FILE !" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
-echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
+echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
-echo "\" >>Customs" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
+echo "\" >>Customs" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
 echo "if g:abivim_color_custom" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
@@ -43,10 +43,10 @@ echo "\" >>Linkers" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
     echo "    if !exists(\"g:abivim_link_${sets}\")" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
     echo "    let g:abivim_link_${sets} = \"Type\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
-    echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
+    echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 done < "temp"
 rm temp
-echo "endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
+echo "endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
 echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 echo "\" }}}"  >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim" 

@@ -1,47 +1,48 @@
 " abinit input syntax file for vim
  
 if g:abivim_color_custom
-    highlight basic ctermfg= g:abivim_color_basic guifg=g:abivim_color_basic
-    highlight bse ctermfg=g:abivim_color_bse guifg=g:abivim_color_bse
-    highlight dev ctermfg=g:abivim_color_dev guifg=g:abivim_color_dev
-    highlight dfpt ctermfg=g:abivim_color_dfpt guifg=g:abivim_color_dfpt
-    highlight dmft ctermfg=g:abivim_color_dmft guifg=g:abivim_color_dmft
-    highlight eph ctermfg=g:abivim_color_eph guifg=g:abivim_color_eph
-    highlight ffield ctermfg=g:abivim_color_ffield guifg=g:abivim_color_ffield
-    highlight files ctermfg=g:abivim_color_files guifg=g:abivim_color_files
-    highlight geo ctermfg=g:abivim_color_geo guifg=g:abivim_color_geo
-    highlight gstate ctermfg=g:abivim_color_gstate guifg=g:abivim_color_gstate
-    highlight gw ctermfg=g:abivim_color_gw guifg=g:abivim_color_gw
-    highlight gwr ctermfg=g:abivim_color_gwr guifg=g:abivim_color_gwr
-    highlight internal ctermfg=g:abivim_color_internal guifg=g:abivim_color_internal
-    highlight paral ctermfg=g:abivim_color_paral guifg=g:abivim_color_paral
-    highlight paw ctermfg=g:abivim_color_paw guifg=g:abivim_color_paw
-    highlight rlx ctermfg=g:abivim_color_rlx guifg=g:abivim_color_rlx
-    highlight rttddft ctermfg=g:abivim_color_rttddft guifg=g:abivim_color_rttddft
-    highlight vdw ctermfg=g:abivim_color_vdw guifg=g:abivim_color_vdw
-    highlight w90 ctermfg=g:abivim_color_w90 guifg=g:abivim_color_w90
-    highlight Repeat guifg=g:abivim_color_repeatfg guibg=g:abivim_color_repeatbg
+    exec 'highlight basic guifg= ' . g:abivim_color_basic
+    exec 'highlight bse guifg= ' . g:abivim_color_bse
+    exec 'highlight dev guifg= ' . g:abivim_color_dev
+    exec 'highlight dfpt guifg= ' . g:abivim_color_dfpt
+    exec 'highlight dmft guifg= ' . g:abivim_color_dmft
+    exec 'highlight eph guifg= ' . g:abivim_color_eph
+    exec 'highlight ffield guifg= ' . g:abivim_color_ffield
+    exec 'highlight files guifg= ' . g:abivim_color_files
+    exec 'highlight geo guifg= ' . g:abivim_color_geo
+    exec 'highlight gstate guifg= ' . g:abivim_color_gstate
+    exec 'highlight gw guifg= ' . g:abivim_color_gw
+    exec 'highlight gwr guifg= ' . g:abivim_color_gwr
+    exec 'highlight internal guifg= ' . g:abivim_color_internal
+    exec 'highlight paral guifg= ' . g:abivim_color_paral
+    exec 'highlight paw guifg= ' . g:abivim_color_paw
+    exec 'highlight rlx guifg= ' . g:abivim_color_rlx
+    exec 'highlight rttddft guifg= ' . g:abivim_color_rttddft
+    exec 'highlight vdw guifg= ' . g:abivim_color_vdw
+    exec 'highlight w90 guifg= ' . g:abivim_color_w90
+    exec 'highlight Repeat guifg= ' . g:abivim_color_repeatfg . ' guibg=' . g:abivim_color_repeatbg
 else
-    highlight! link basic g:abivim_link_basic
-    highlight! link bse g:abivim_link_bse
-    highlight! link dev g:abivim_link_dev
-    highlight! link dfpt g:abivim_link_dfpt
-    highlight! link dmft g:abivim_link_dmft
-    highlight! link eph g:abivim_link_eph
-    highlight! link ffield g:abivim_link_ffield
-    highlight! link files g:abivim_link_files
-    highlight! link geo g:abivim_link_geo
-    highlight! link gstate g:abivim_link_gstate
-    highlight! link gw g:abivim_link_gw
-    highlight! link gwr g:abivim_link_gwr
-    highlight! link internal g:abivim_link_internal
-    highlight! link paral g:abivim_link_paral
-    highlight! link paw g:abivim_link_paw
-    highlight! link rlx g:abivim_link_rlx
-    highlight! link rttddft g:abivim_link_rttddft
-    highlight! link vdw g:abivim_link_vdw
-    highlight! link w90 g:abivim_link_w90
-    highlight! link Repeat g:abivim_link_repeat
+    exec 'highlight! link basic ' . g:abivim_link_basic
+    exec 'highlight! link bse ' . g:abivim_link_bse
+    exec 'highlight! link dev ' . g:abivim_link_dev
+    exec 'highlight! link dfpt ' . g:abivim_link_dfpt
+    exec 'highlight! link dmft ' . g:abivim_link_dmft
+    exec 'highlight! link eph ' . g:abivim_link_eph
+    exec 'highlight! link ffield ' . g:abivim_link_ffield
+    exec 'highlight! link files ' . g:abivim_link_files
+    exec 'highlight! link geo ' . g:abivim_link_geo
+    exec 'highlight! link gstate ' . g:abivim_link_gstate
+    exec 'highlight! link gw ' . g:abivim_link_gw
+    exec 'highlight! link gwr ' . g:abivim_link_gwr
+    exec 'highlight! link internal ' . g:abivim_link_internal
+    exec 'highlight! link paral ' . g:abivim_link_paral
+    exec 'highlight! link paw ' . g:abivim_link_paw
+    exec 'highlight! link rlx ' . g:abivim_link_rlx
+    exec 'highlight! link rttddft ' . g:abivim_link_rttddft
+    exec 'highlight! link vdw ' . g:abivim_link_vdw
+    exec 'highlight! link w90 ' . g:abivim_link_w90
+    exec 'highlight! link Repeat ' . g:abivim_link_repeat
+endif
 
 " ============================
 
@@ -1005,6 +1006,7 @@ syntax match gstate "\<oracle_min_occ[0-9:?+]*\c\>"
 " ============================
 
 syntax match Comment "#.*"
-if g:abvim_supercomment
-    highlight BrightComment guifg=g:abivim_color_supercomment
+if g:abivim_supercomment
+    exec 'highlight BrightComment guifg= ' . g:abivim_color_supercomment
     syntax match BrightComment "##.*"
+endif
