@@ -17,36 +17,38 @@ grep 'varset=' "$DOC" | sed -E "s/.*varset=[\"']([^\"']+)[\"'].*/\1/" > "$SCRIPT
 # make temporary unique set files
 sort "$SCRIPT_DIR/dict/abiset.txt" | uniq > temp
 
-linenb=$(grep -Pn "Colors Settings: {{{" "$SCRIPT_DIR/abivim.vim" | grep -Po -m 1 '^(\d+)')
+linenb=$(grep -Pn "Colors Settings: {{{" "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim" | grep -Po -m 1 '^(\d+)')
 
 #destroy previous colors settings
-sed -i "\"${linenb},\$d\"" "$SCRIPT_DIR/abivim.vim"
+sed -i "${linenb},\$d" "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
 # add new colors
-echo "\" Colors Settings: {{{" >> "$SCRIPT_DIR/abivim.vim"
-echo "\" ! PUSH AT THE END OF FILE !" >> "$SCRIPT_DIR/abivim.vim"
+echo "\" Colors Settings: {{{" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+echo "\" ! PUSH AT THE END OF FILE !" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
-echo "" >> "$SCRIPT_DIR/abivim.vim"
+echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
 
-echo "\" >>Customs" >> "$SCRIPT_DIR/abivim.vim"
+echo "\" >>Customs" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
 
-echo "if g:abivim_color_custom" >> "$SCRIPT_DIR/abivim.vim"
+echo "if g:abivim_color_custom" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
-    echo "    if !has(g:abivim_color_${sets})" >> "$SCRIPT_DIR/abivim.vim"
-    echo "        let g:abivim_color_${sets} = \"#94E2D5\"" >> "$SCRIPT_DIR/abivim.vim"
-    echo "    endif" >> "$SCRIPT_DIR/abivim.vim" 
+    echo "    if !exists(\"g:abivim_color_${sets}\")" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "        let g:abivim_color_${sets} = \"#94E2D5\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim" 
 done < "temp"
 
-echo "" >> "$SCRIPT_DIR/abivim.vim"
-echo "else" >> "$SCRIPT_DIR/abivim.vim"
-echo "\" >>Linkers" >> "$SCRIPT_DIR/abivim.vim"
+echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+echo "else" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+echo "\" >>Linkers" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
-    echo "    if !has(g:abivim_link_${sets})" >> "$SCRIPT_DIR/abivim.vim"
-    echo "    let g:abivim_link_${sets} = \"Type\"" >> "$SCRIPT_DIR/abivim.vim"
-    echo "    endif" >> "$SCRIPT_DIR/abivim.vim"
+    echo "    if !exists(\"g:abivim_link_${sets}\")" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "    let g:abivim_link_${sets} = \"Type\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
 done < "temp"
 rm temp
-echo "" >> "$SCRIPT_DIR/abivim.vim"
-echo "\" }}}"  >> "$SCRIPT_DIR/abivim.vim" 
+echo "endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim.vim"
+
+echo "" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+echo "\" }}}"  >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim" 
 
 ./abisyntax.sh "$DOC" "$SCRIPT_DIR/dict" false "$SCRIPT_DIR" 
