@@ -80,7 +80,20 @@ function! HighlightRepeats() range
   endfor
 endfunction
 
+function! CheckInput()
+    " Checks the current buffers input with the abinit --dry-run commands then
+    " cleans up the repo
+    " NOTE: Upgrading this command with capture and parsing of the file
+    let abinitInputName = expand("%:p:r")
+    let inputList = [abinitInputName .. ".abi", "tmp.abivim.abo", abinitInputName .. "i", abinitInputName .. "o" ]
+    " exec "!{ echo  " .. abinitInputName .. ".abi;echo tmp.abivim.abo;echo " .. abinitInputName .. "i;echo " .. abinitInputName .. "o;echo ; } | abinit --dry-run"
+    let outputCheck = system("abinit --dry-run", inputList)
+endfunction
+
+
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+command! CheckInput call CheckInput()
+
 
 if !exists("g:abivim_error_on_save") || !g:abivim_error_on_save
     au BufReadPost,BufWritePost *.abi HighlightRepeats  
