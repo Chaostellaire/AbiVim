@@ -1,4 +1,4 @@
-" Using honly the dictionary created with the scrapper 
+" Using only the dictionary created with the scrapper 
 setlocal complete=k
 
 " setting up the complete options
@@ -10,15 +10,12 @@ setlocal completeopt=longest,menuone "minimal option for maximal compatibility
 setlocal iskeyword+=-
 
 
-" trying custom function :
-"source $HOME/.vim/assets/abivar.txt
-
-let s:varnames=readfile(expand("<sfile>/../assets/abivar.txt"))
-let s:mnemonics=readfile(expand("<sfile>/../assets/abimnemo.txt")) 
-let b:numberofvar=len(s:varnames)
 
 function! CompleteABI(findstart, base)
     " let numberofvar=len(s:varnames)
+    let s:varnames=readfile(expand("<script>:p:h") .. "/../dict/abivar.txt")
+    let s:mnemonics=readfile(expand("<script>:p:h") .. "/../dict/abimnemo.txt") 
+    let s:numberofvar=len(s:varnames)
     if a:findstart
         " locate the start of the word
         let line = getline('.')
@@ -30,7 +27,7 @@ function! CompleteABI(findstart, base)
     else
         " find classes matching "a:base"
         let res = [] 
-        for m in range(b:numberofvar) 
+        for m in range(s:numberofvar) 
             if s:varnames[m] =~ '^' . a:base
                 let l:desc=string(s:mnemonics[m])
                 call add(res, {"word": s:varnames[m], "menu": l:desc } )
@@ -85,6 +82,9 @@ endfunction
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
-au BufReadPost,BufWritePost *.abi HighlightRepeats  
+if !exists("g:abivim_error_on_save") || !g:abivim_error_on_save
+    au BufReadPost,BufWritePost *.abi HighlightRepeats  
+" TODO: Implement error when saving with syntax error
+endif
 
 

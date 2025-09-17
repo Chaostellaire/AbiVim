@@ -19,9 +19,6 @@ if !exists("g:abivim_supercomment")
     let g:abivim_supercomment = 1
 endif
 
-if !exists("g:abivim_error_on_save")
-    let g:abivim_error_on_save = 1
-endif
 
 
 " > Variable-type-free colors
