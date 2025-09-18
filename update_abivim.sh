@@ -5,7 +5,7 @@
 
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-if [ ! "$#" -eq 1 ]; then echo -e "\033[32m Please provide the mkdocs location of abiniit_variables.py \033[0m"; exit 1 ;fi
+if [ ! "$#" -eq 1 ]; then echo -e "\033[32m Please provide the mkdocs location of abinit_variables.py \033[0m"; exit 1 ;fi
 DOC="$1"
 
 

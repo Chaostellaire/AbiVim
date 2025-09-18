@@ -85,9 +85,10 @@ function! CheckInput()
     " cleans up the repo
     " NOTE: Upgrading this command with capture and parsing of the file
     let abinitInputName = expand("%:p:r")
-    let inputList = [abinitInputName .. ".abi", "tmp.abivim.abo", abinitInputName .. "i", abinitInputName .. "o" ]
-    " exec "!{ echo  " .. abinitInputName .. ".abi;echo tmp.abivim.abo;echo " .. abinitInputName .. "i;echo " .. abinitInputName .. "o;echo ; } | abinit --dry-run"
-    let outputCheck = system("abinit --dry-run", inputList)
+    " System command to hard reverting
+    exec "!{ echo  " .. abinitInputName .. ".abi;echo tmp.abivim.abo;echo " .. abinitInputName .. "i;echo " .. abinitInputName .. "o;echo ; } | abinit --dry-run"
+    " let outputCheck = system("abinit --dry-run", inputList)
+    silent !rm tmp.abivim.abo
 endfunction
 
 
