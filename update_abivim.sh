@@ -33,7 +33,7 @@ echo "\" >>Customs" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 echo "if g:abivim_color_custom" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
     echo "    if !exists(\"g:abivim_color_${sets}\")" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
-    echo "        let g:abivim_color_${sets} = \"#94E2D5\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "        let g:abivim_color_${sets} = \"#ef9f76\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
     echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim" 
 done < "temp"
 

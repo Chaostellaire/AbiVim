@@ -1005,6 +1005,24 @@ syntax match gstate "\<oracle_min_occ[0-9:?+]*\c\>"
 
 " ============================
 
+syntax region String start=/\v\"/ skip=/\v\\./ end=/\v\"/
+syntax match Float "-\?[0-9]*\.\?[d0-9]\+\.\?"
+syntax match Number "-\?[0-9]\+"
+
+" ============================
+
+" https://docs.abinit.org/guide/abinit/#physical-information
+syntax keyword energy_unit Ha Hartree eV meV Rydbergs Rydberg Ry K Kelvin
+syntax keyword length_unit Bohr nm Ang Angstr Angstrom
+syntax keyword mag_unit T Tesla
+syntax keyword time_unit as asec asecond ps psec psecond
+highlight! link energy_unit Type
+highlight! link length_unit Type
+highlight! link time_unit Type
+highlight! link mag_unit Type
+
+" ============================
+
 syntax match Comment "#.*"
 if g:abivim_supercomment
     exec 'highlight BrightComment guifg= ' . g:abivim_color_supercomment
