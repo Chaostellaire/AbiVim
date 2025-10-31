@@ -42,7 +42,7 @@ echo "else" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 echo "\" >>Linkers" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 while IFS= read -r sets; do
     echo "    if !exists(\"g:abivim_link_${sets}\")" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
-    echo "    let g:abivim_link_${sets} = \"Type\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
+    echo "    let g:abivim_link_${sets} = \"Keyword\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
     echo "    endif" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 done < "temp"
 rm temp
