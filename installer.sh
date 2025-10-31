@@ -98,22 +98,35 @@ DOWNLOAD_SITE="https://github.com/abinit/abinit/blob/master/abimkdocs/variables_
 UPDATE=0
 VARFILE=""
 FORCE_PUSH=0
+TEXT=""
+NOTE="\e[35mNOTE:\e[0m"
+
 
 if [ $# -eq 0 ]; then
-    echo "interactive not implemented yet"
-    echo "1 - get a version of the variables file of abinit for exemple at "
-    echo "$DOWNLOAD_SITE"
-    echo "2 - try : ./installer.sh --vimdir <your/vim/dir> -u --varfile ./variables_abinit.py"
-    echo "3 - add to your vimrc : filetype plugin on "
-    echo "4 - you can modify abivim_* variables in your vimrc"
-    exit 1
+    echo -e "$NOTE interactive not implemented yet, abivim will install the repo version to your vim"
+    echo -e "$NOTE Abinit documentation of version 10.3.5"
+    echo -e "$NOTE to upgrade do the following :"
+    echo -e "$NOTE 1 - get a version of the variables file of abinit for exemple at "
+    echo -e "$NOTE $DOWNLOAD_SITE"
+    echo -e "$NOTE 2 - try : ./installer.sh --vimdir <your/vim/dir> -u --varfile ./variables_abinit.py"
+    echo -e "$NOTE 3 - add to your vimrc : 'filetype plugin on'  and 'syntax on'"
+    echo -e "$NOTE 4 - you can modify abivim_* variables in your vimrc"
 fi
-
 parser "$@"
-if [ -z $VARFILE ]; then echo "please provide a variable file" ; exit 1 ; fi
-if [ $UPDATE -eq 1 ] ; then update $VARFILE ; fi
-
-clean_install $VIMDIR $FORCE_PUSH
-
+[ $FORCE_PUSH -eq 1 ] && TEXT="forcefully" 
+if [ $UPDATE -eq 1 ] ; then 
+    [ -z $VARFILE ] && echo -e "\e[31m ERROR \e[0m -- NO VARIABLE FILE GIVEN" && exit 1;
+    echo -e "\e[33m[abivim]>\e[0m updating local files..."
+    update $VARFILE
+    echo -e "\e[33m[abivim]>\e[0m done"
+    echo -e "\e[33m[abivim]>\e[0m copying to $VIMDIR $TEXT"
+    clean_install $VIMDIR $FORCE_PUSH
+else
+    echo -e "\e[33m[abivim]>\e[0m no update, using local files"
+    echo -e "\e[33m[abivim]>\e[0m copying to $VIMDIR $TEXT"
+    clean_install $VIMDIR $FORCE_PUSH
+fi
+echo -e "\e[33m[abivim]>\e[0m done"
+echo -e "\e[33m[abivim]>\e[0m \e[1;32mINSTALLATION COMPLETE"
 exit 0
 
