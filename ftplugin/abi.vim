@@ -10,11 +10,13 @@ setlocal completeopt=longest,menuone "minimal option for maximal compatibility
 setlocal iskeyword+=-
 
 
+let s:dict_location= expand("<sfile>:h") . "/../dict/"
 
 function! CompleteABI(findstart, base)
     " let numberofvar=len(s:varnames)
-    let s:varnames=readfile(expand("<script>:p:h") .. "/../dict/abivar.txt")
-    let s:mnemonics=readfile(expand("<script>:p:h") .. "/../dict/abimnemo.txt") 
+    echo expand("<sfile>:h")
+    let s:varnames=readfile(s:dict_location . "abivar.txt")
+    let s:mnemonics=readfile(s:dict_location . "abimnemo.txt") 
     let s:numberofvar=len(s:varnames)
     if a:findstart
         " locate the start of the word
@@ -94,7 +96,7 @@ endfunction
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! CheckInput call CheckInput()
-
+command! GoToDef call abinit_function#GoToDef()
 
 if !exists("g:abivim_error_on_save") || !g:abivim_error_on_save
     au BufReadPost,BufWritePost *.abi HighlightRepeats  

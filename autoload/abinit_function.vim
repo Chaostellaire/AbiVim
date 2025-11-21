@@ -1,12 +1,12 @@
 
-
+let s:dict_location=expand("<sfile>:h") .. "/../dict/"
 
 function! abinit_function#GoToDef()
     " Open the website with var undercursor 
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
-        let s:varnames=readfile(expand("<script>:p:h") .. "/../dict/abivar.txt")
-        let s:vartypes=readfile(expand("<script>:p:h") .. "/../dict/abiset.txt")
+        let s:varnames=readfile(s:dict_location . "abivar.txt")
+        let s:vartypes=readfile(s:dict_location . "abiset.txt")
         let m=0
         while m < len(s:vartypes)
             if s:varnames[m] =~ s:varname
@@ -24,3 +24,5 @@ function! abinit_function#GoToDef()
         echom "No text found"
     endif
 endfun
+
+
