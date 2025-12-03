@@ -100,6 +100,28 @@ echo " " >> "syntax/abi.vim"
 
 #Configuration 
 
+echo "syntax region String start=/\\v\\\"/ skip=/\\v\\\\./ end=/\\v\\\"/" >> "syntax/abi.vim"
+echo "syntax match Float \"-\?[0-9]*\.\?[d0-9]\+\.\?\"" >> "syntax/abi.vim"
+echo "syntax match Number \"-\?[0-9]\+\"" >> "syntax/abi.vim"
+
+echo "" >> "syntax/abi.vim"
+echo "\" ============================" >> "syntax/abi.vim"
+echo "" >> "syntax/abi.vim"
+
+echo "\" https://docs.abinit.org/guide/abinit/#physical-information" >> "syntax/abi.vim"
+echo "syntax keyword energy_unit Ha Hartree eV meV Rydbergs Rydberg Ry K Kelvin" >> "syntax/abi.vim"
+echo "syntax keyword length_unit Bohr nm Ang Angstr Angstrom angstrom" >> "syntax/abi.vim"
+echo "syntax keyword mag_unit T Tesla" >> "syntax/abi.vim"
+echo "syntax keyword time_unit as asec asecond ps psec psecond" >> "syntax/abi.vim"
+echo "highlight! link energy_unit Type" >> "syntax/abi.vim"
+echo "highlight! link length_unit Type" >> "syntax/abi.vim"
+echo "highlight! link time_unit Type" >> "syntax/abi.vim"
+echo "highlight! link mag_unit Type" >> "syntax/abi.vim"
+
+echo "" >> "syntax/abi.vim"
+echo "\" ============================" >> "syntax/abi.vim"
+echo "" >> "syntax/abi.vim"
+
 echo "if g:abivim_color_custom" >> "syntax/abi.vim"
 
 # First define default groups
@@ -130,27 +152,6 @@ echo "" >> "syntax/abi.vim"
 echo "\" ============================" >> "syntax/abi.vim"
 echo "" >> "syntax/abi.vim"
 
-echo "syntax region String start=/\\v\\\"/ skip=/\\v\\\\./ end=/\\v\\\"/" >> "syntax/abi.vim"
-echo "syntax match Float \"-\?[0-9]*\.\?[d0-9]\+\.\?\"" >> "syntax/abi.vim"
-echo "syntax match Number \"-\?[0-9]\+\"" >> "syntax/abi.vim"
-
-echo "" >> "syntax/abi.vim"
-echo "\" ============================" >> "syntax/abi.vim"
-echo "" >> "syntax/abi.vim"
-
-echo "\" https://docs.abinit.org/guide/abinit/#physical-information" >> "syntax/abi.vim"
-echo "syntax keyword energy_unit Ha Hartree eV meV Rydbergs Rydberg Ry K Kelvin" >> "syntax/abi.vim"
-echo "syntax keyword length_unit Bohr nm Ang Angstr Angstrom" >> "syntax/abi.vim"
-echo "syntax keyword mag_unit T Tesla" >> "syntax/abi.vim"
-echo "syntax keyword time_unit as asec asecond ps psec psecond" >> "syntax/abi.vim"
-echo "highlight! link energy_unit Type" >> "syntax/abi.vim"
-echo "highlight! link length_unit Type" >> "syntax/abi.vim"
-echo "highlight! link time_unit Type" >> "syntax/abi.vim"
-echo "highlight! link mag_unit Type" >> "syntax/abi.vim"
-
-echo "" >> "syntax/abi.vim"
-echo "\" ============================" >> "syntax/abi.vim"
-echo "" >> "syntax/abi.vim"
 
 echo "syntax match Comment \"#.*\"" >> "syntax/abi.vim"
 echo "if g:abivim_supercomment" >> "syntax/abi.vim"

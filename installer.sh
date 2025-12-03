@@ -84,14 +84,16 @@ clean_install() {
     local isforce=$2
     
     if [ $isforce -eq 1 ]; then force="-f" ; else force="-i" ; fi
-    mkdir -p "$vimdir/ftdetect" "$vimdir/ftplugin" "$vimdir/syntax" "$vimdir/autoload" "$vimdir/dict" 
+    #mkdir -p "$vimdir/plugin"
+    #cp -r $force autoload ftplugin dict syntax colors ftdetect "$vimdir/plugin"
+    #mkdir -p "$vimdir/ftdetect" "$vimdir/ftplugin" "$vimdir/syntax" "$vimdir/autoload" "$vimdir/dict" 
     #"$vimdir/ftplugin/abi"
     #mkdir -p "$vimdir/after/syntax"
-    cp $force ./autoload/* "$vimdir/autoload/"
-    cp $force ./dict/* "$vimdir/dict/"
-    cp $force ./syntax/* "$vimdir/syntax/"
-    cp -r $force ./ftplugin/* "$vimdir/ftplugin/"
-    cp $force ./ftdetect/* "$vimdir/ftdetect/"
+    cp -r $force autoload "$vimdir"
+    cp -r $force dict "$vimdir"
+    cp -r $force syntax "$vimdir"
+    cp -r $force ftplugin "$vimdir"
+    cp -r $force ftdetect "$vimdir"
     #cp $force ./after/syntax/* "$vimdir/after/syntax"
 }
 

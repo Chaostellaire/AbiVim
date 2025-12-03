@@ -1,3 +1,5 @@
+" Restart syntax if in an abi file -- conflict with some colorschmes
+so syntax/abi.vim
 " Using only the dictionary created with the scrapper 
 setlocal complete=k
 
