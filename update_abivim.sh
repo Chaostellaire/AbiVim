@@ -153,7 +153,7 @@ echo "\" ============================" >> "syntax/abi.vim"
 echo "" >> "syntax/abi.vim"
 
 
-echo "syntax match Comment \"#.*\"" >> "syntax/abi.vim"
+echo "syntax match Comment \"[#!].*\"" >> "syntax/abi.vim"
 echo "if g:abivim_supercomment" >> "syntax/abi.vim"
 echo "    exec 'highlight BrightComment guifg= ' . g:abivim_color_supercomment" >> "syntax/abi.vim"
 echo "    syntax match BrightComment \"##.*\"" >> "syntax/abi.vim"
