@@ -6,6 +6,6 @@
 "  Last Modified: 15 Sep 2025
 " ----------------------------------------------------------------------
 " Enable .abi detection
+augroup filetypedetect
 au! BufRead,BufNewFile *.abi setfiletype abi
-au! BufRead,BufNewFile *.abo setfiletype abo
-
+augroup END
