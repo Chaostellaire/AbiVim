@@ -43,30 +43,36 @@ let g:documentation_path='/home/lebrunh/local/src/abinit-v10.4.7/abimkdocs/varia
 " -------------------------
 " Show the defintion of the varaible under the cursor with the local
 " documentation. Creates a Popup with the information.
-" TODO : Check if popup is available otherwise fallback to splitscreen
+" TODO : Check if popup is available otherwise fallback to splitscreen vim < 802 has no popup
 function! abinit_function#ShowDef()
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
         let l:docbufnr = bufadd(g:documentation_path)
         let s:helpbufnr = bufadd("abivim_help")
-        "searchpair('(','',')','rW')
-        "getbufline(buffname, lnum, end) -> Line list
         execute 'lvimgrep /abivarname="' . s:varname . '"/ ' . g:documentation_path
         let l:first_line=line('.')
         let l:last_line = searchpair('(','',')','Wn')-1
         let l:VarObject= getline(l:first_line,l:last_line) 
         execute 'bd ' . l:docbufnr
 
-        call bufload(s:helpbufnr)
         let l:VarObject = abinit_function#_ParseDoc(l:VarObject)
+        call bufload(s:helpbufnr)
         call setbufline(s:helpbufnr,1,l:VarObject)
-        call setbufvar(s:helpbufnr,'buftype','nofile')
-        call setbufvar(s:helpbufnr,'bufhidden','delete')
-        call setbufvar(s:helpbufnr,'filetype', 'abi')
-        call popup_create(s:helpbufnr, {'line':'cursor+1','col':'cursor','pos':'topleft','moved':'any'})   
-      "  setfiletype abi
-      "  setlocal buftype=nofile bufhidden=wipe noswapfile
-        "normal zz
+        if v:version > 801 && g:abivim_popup_help && has("popupwin")
+            " Popup mode is compiled and user activated it
+            call setbufvar(s:helpbufnr,'buftype','popup')
+            call setbufvar(s:helpbufnr,'bufhidden','delete')
+            call setbufvar(s:helpbufnr,'&filetype', 'abi')
+            call popup_create(s:helpbufnr, {'line':'cursor+1','col':'cursor','pos':'topleft','moved':'any'})   
+            " NOTE: still the popup wants to be saved smh 
+        else
+            " newtab or split
+            " MISSING: vsplit and tabnew support
+            split abivim_help
+            setfiletype abi
+            setlocal buftype=nofile bufhidden=wipe noswapfile
+            setlocal nomod
+        endif  
     endif
 endfunction
 
@@ -98,7 +104,7 @@ function! abinit_function#_ParseDoc(lines)
     let l:line .= repeat(' ', l:lengthHelp - strlen(l:line) - strlen(l:version) - 2) . '(' . l:version . ')'
     call add(l:outputLines, l:line)
     call add(l:outputLines, repeat('-', l:lengthHelp))
-    while a:lines[l:currentidx] !~ '"""'
+    while a:lines[l:currentidx] !~ '"""' && l:currentidx < len(a:lines)
         call add(l:outputLines, a:lines[l:currentidx])
         let l:currentidx+=1
     endwhile

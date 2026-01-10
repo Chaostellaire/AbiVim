@@ -14,6 +14,12 @@ setlocal completeopt=longest,menuone "minimal option for maximal compatibility
 "setlocal completepopup=height:20,width:60
 setlocal iskeyword+=-
 
+" Global: abivim_help_vim
+" -----------------------
+" help window display mode : split [default], vsplit, tabnew, popup
+if !has("g:abivim_help_win")
+    let g:abivim_popup_help="split"
+endif
 
 let s:dict_location= expand("<sfile>:h") . "/../dict/"
 
