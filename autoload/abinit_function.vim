@@ -46,13 +46,7 @@ let g:documentation_path='/home/lebrunh/local/src/abinit-v10.4.7/abimkdocs/varia
 function! abinit_function#ShowDef()
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
-        " exe 'argument ' . l:docbufnr
-        " let l:varname_line = search('abivarname="'.s:varname.'"', 'cn')
-        " echom l:varname_line
-        " exec 'Normal '.l:varname_line-1.'gg'
-        " call setbufline("abivim_help_popup",1,getbufline(s:documentation,l:varname_line,l:last_line-1))
-        " exec 'argument ' . l:helpbufnr
-
+        let l:docbufnr = bufadd(g:documentation_path)
 
         "searchpair('(','',')','rW')
         "getbufline(buffname, lnum, end) -> Line list
@@ -60,10 +54,13 @@ function! abinit_function#ShowDef()
         let l:first_line=line('.')
         let l:last_line = searchpair('(','',')','Wn')-1
         let l:VarObject= getline(l:first_line,l:last_line) 
+        execute 'bd ' . l:docbufnr
 
-        $tabnew abivim_help
+
+        tabnew abivim_help
         setfiletype abi
         setlocal buftype=nofile bufhidden=wipe noswapfile
+        let l:VarObject = abinit_function#_ParseDoc(l:VarObject)
         call setline(1,l:VarObject)
         setlocal nomodifiable
     
@@ -71,3 +68,38 @@ function! abinit_function#ShowDef()
     endif
 endfunction
 
+" abinit_function#_ParseDoc()
+" ---------------------------
+" Parse the documentation 'Variable' object of the varaible_abinit.py file
+" Function is not meant to be call by user
+function! abinit_function#_ParseDoc(lines)
+    let l:lengthHelp = 80
+    let l:outputLines=[]
+    let l:line='' "current line
+    for i in range(0,len(a:lines)-1)
+        if a:lines[i] =~ 'abivarname='
+            let l:name = substitute(a:lines[i],'\s\+abivarname="\([^"]*\)".*', '\=submatch(1)', '')
+        elseif a:lines[i] =~ 'vartype='
+            let l:type = substitute(a:lines[i],'\s\+vartype="\([^"]*\)".*', '\=submatch(1)', '')
+        elseif a:lines[i] =~ 'version='
+            let l:version = substitute(a:lines[i],'\s\+added_in_version="\([^"]*\)".*', '\=submatch(1)', '')
+        elseif a:lines[i] =~ 'dimensions='
+            let l:dim = substitute(a:lines[i],'\s\+dimensions=\([^"]*\),.*', '\=submatch(1)', '')
+        elseif a:lines[i] =~ 'text='
+            let l:currentidx = i+1
+            break
+        endif
+    endfor 
+    let l:line = l:name . ' {' . l:type . '} -- ' . l:dim
+    let l:line .= repeat(' ', l:lengthHelp - strlen(l:line) - strlen(l:version) - 2) . '(' . l:version . ')'
+    call add(l:outputLines, l:line)
+    call add(l:outputLines, repeat('-', l:lengthHelp))
+    while a:lines[l:currentidx] !~ '"""'
+        call add(l:outputLines, a:lines[l:currentidx])
+        let l:currentidx+=1
+    endwhile
+    return l:outputLines
+endfunction
+
+
+   
