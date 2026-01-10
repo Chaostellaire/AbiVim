@@ -42,12 +42,13 @@ let g:documentation_path='/home/lebrunh/local/src/abinit-v10.4.7/abimkdocs/varia
 " abinit_function#ShowDef()
 " -------------------------
 " Show the defintion of the varaible under the cursor with the local
-" documentation
+" documentation. Creates a Popup with the information.
+" TODO : Check if popup is available otherwise fallback to splitscreen
 function! abinit_function#ShowDef()
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
         let l:docbufnr = bufadd(g:documentation_path)
-
+        let s:helpbufnr = bufadd("abivim_help")
         "searchpair('(','',')','rW')
         "getbufline(buffname, lnum, end) -> Line list
         execute 'lvimgrep /abivarname="' . s:varname . '"/ ' . g:documentation_path
@@ -56,14 +57,15 @@ function! abinit_function#ShowDef()
         let l:VarObject= getline(l:first_line,l:last_line) 
         execute 'bd ' . l:docbufnr
 
-
-        tabnew abivim_help
-        setfiletype abi
-        setlocal buftype=nofile bufhidden=wipe noswapfile
+        call bufload(s:helpbufnr)
         let l:VarObject = abinit_function#_ParseDoc(l:VarObject)
-        call setline(1,l:VarObject)
-        setlocal nomodifiable
-    
+        call setbufline(s:helpbufnr,1,l:VarObject)
+        call setbufvar(s:helpbufnr,'buftype','nofile')
+        call setbufvar(s:helpbufnr,'bufhidden','delete')
+        call setbufvar(s:helpbufnr,'filetype', 'abi')
+        call popup_create(s:helpbufnr, {'line':'cursor+1','col':'cursor','pos':'topleft','moved':'any'})   
+      "  setfiletype abi
+      "  setlocal buftype=nofile bufhidden=wipe noswapfile
         "normal zz
     endif
 endfunction
@@ -73,6 +75,7 @@ endfunction
 " Parse the documentation 'Variable' object of the varaible_abinit.py file
 " Function is not meant to be call by user
 function! abinit_function#_ParseDoc(lines)
+    " MISSING: Default value
     let l:lengthHelp = 80
     let l:outputLines=[]
     let l:line='' "current line
@@ -84,7 +87,8 @@ function! abinit_function#_ParseDoc(lines)
         elseif a:lines[i] =~ 'version='
             let l:version = substitute(a:lines[i],'\s\+added_in_version="\([^"]*\)".*', '\=submatch(1)', '')
         elseif a:lines[i] =~ 'dimensions='
-            let l:dim = substitute(a:lines[i],'\s\+dimensions=\([^"]*\),.*', '\=submatch(1)', '')
+            let l:dim = substitute(a:lines[i],'\s\+dimensions="\?\[\?\([^"]*\)\]\?"\?,.*', '\=submatch(1)', '')
+            let l:dim = substitute(l:dim, "'", '', 'g')
         elseif a:lines[i] =~ 'text='
             let l:currentidx = i+1
             break
