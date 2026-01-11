@@ -158,7 +158,7 @@ endif
 " abinit input syntax file for vim
  
 syntax region String start=/\v\"/ skip=/\v\\./ end=/\v\"/
-syntax match Float "-\?[0-9]*\.\?[d0-9]\+\.\?"
+syntax match Float "-\?[0-9\.]\+[dDeE0-9]\+\.\?"
 syntax match Number "-\?[0-9]\+"
 
 " ============================
@@ -1180,7 +1180,7 @@ syntax match gstate "\<oracle_min_occ[0-9:?+]*\c\>"
 
 " ============================
 
-syntax match Comment "#.*"
+syntax match Comment "[#!].*"
 if g:abivim_supercomment
     exec 'highlight BrightComment guifg= ' . g:abivim_color_supercomment
     syntax match BrightComment "##.*"

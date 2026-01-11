@@ -36,15 +36,18 @@ function! abinit_function#GoToDefWeb()
     endif
 endfun
 
-" suppose that I know the path to the documentation locally
-let g:documentation_path='/home/lebrunh/local/src/abinit-v10.4.7/abimkdocs/variables_abinit.py'
-
 " abinit_function#ShowDef()
 " -------------------------
 " Show the defintion of the varaible under the cursor with the local
 " documentation. Creates a Popup with the information.
 " TODO : Check if popup is available otherwise fallback to splitscreen vim < 802 has no popup
 function! abinit_function#ShowDef()
+" suppose that I know the path to the documentation locally
+" IF NO documentation_path is set : error 
+    if !has('g:abinit_documentation_path')
+        echom 'g:abinit_documentation_path is not set !'
+        return 1
+    endif
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
         let l:docbufnr = bufadd(g:documentation_path)
