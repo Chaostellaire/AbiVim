@@ -101,7 +101,7 @@ echo " " >> "syntax/abi.vim"
 #Configuration 
 
 echo "syntax region String start=/\\v\\\"/ skip=/\\v\\\\./ end=/\\v\\\"/" >> "syntax/abi.vim"
-echo "syntax match Float \"-\?[0-9]*\.\?[dDeE0-9]\+\.\?\"" >> "syntax/abi.vim"
+echo "syntax match Float \"-\?[0-9\.]\+[dDeE0-9]\+\.\?\"" >> "syntax/abi.vim"
 echo "syntax match Number \"-\?[0-9]\+\"" >> "syntax/abi.vim"
 
 echo "" >> "syntax/abi.vim"
