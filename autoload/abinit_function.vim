@@ -5,8 +5,12 @@
 "
 " Harmonie Lebrun
 
-let s:dict_location=expand("<sfile>:h") .. "/../dict/"
-
+" For some reason I wasnt able to make the expand(<sfile> work in vim 800)
+if v:version > 800
+    let s:dict_location=expand("<sfile>:h") .. "/../dict/"
+else
+    let s:dict_location=expand('~/.vim/dict/')
+endif
 " abinit_function#GoToDefWeb
 " --------------------------
 " Open the Abinit Documentation website at the correct tag
@@ -50,9 +54,9 @@ function! abinit_function#ShowDef()
     endif
     let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
     if s:varname != ''
-        let l:docbufnr = bufadd(g:documentation_path)
+        let l:docbufnr = bufadd(g:abinit_documentation_path)
         let s:helpbufnr = bufadd("abivim_help")
-        execute 'lvimgrep /abivarname="' . s:varname . '"/ ' . g:documentation_path
+        execute 'lvimgrep /abivarname="' . s:varname . '"/ ' . g:abinit_documentation_path
         let l:first_line=line('.')
         let l:last_line = searchpair('(','',')','Wn')-1
         let l:VarObject= getline(l:first_line,l:last_line) 
@@ -78,6 +82,34 @@ function! abinit_function#ShowDef()
         endif  
     endif
 endfunction
+
+
+" abinit_function#ShowDefOld()
+" ----------------------------
+" Same as abinit_function#ShowDef() but should work on vim <= 800 (test on vim 800)
+function! abinit_function#ShowDefOld()
+    let s:varname=matchstr(expand('<cword>'), '[A-Za-z_]*')
+    if s:varname != ''
+        exec 'badd ' . g:abinit_documentation_path
+        badd abivim_help
+        let l:docbufnr = bufnr(g:abinit_documentation_path)
+        let s:helpbufnr = bufnr("abivim_help")
+        execute 'lvimgrep /abivarname="' . s:varname . '"/ ' . g:abinit_documentation_path
+        let l:first_line=line('.')
+        let l:last_line = searchpair('(','',')','Wn')-1
+        let l:VarObject= getline(l:first_line,l:last_line) 
+        execute 'bd ' . l:docbufnr
+
+        let l:VarObject = abinit_function#_ParseDoc(l:VarObject)
+        exec 'sb ' . s:helpbufnr
+        append(1,l:VarObject)
+        setfiletype abi
+        setlocal buftype=nofile bufhidden=wipe noswapfile
+        setlocal nomod
+    endif
+endfun
+
+
 
 " abinit_function#_ParseDoc()
 " ---------------------------

@@ -112,7 +112,11 @@ endfunction
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! CheckInput call CheckInput()
 command! GoToDef call abinit_function#GoToDef()
-command! ShowDef call abinit_function#ShowDef()
+if v:version > 800
+    command! ShowDef call abinit_function#ShowDef()
+else
+    command! ShowDef call abinit_function#ShowDefOld()
+endif
 
 nnoremap <C-]> :ShowDef
 
