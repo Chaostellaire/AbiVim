@@ -13,17 +13,6 @@ that you can also find on Github [here](https://github.com/abinit/abinit).
 It colors Abinit variables for typo recognition, provides a rolling menu
 suggesting completion, and fetches variable documentation if needed. 
 
-# TODO 
-- [ ] rewrite the README with up-to-date info
-  * [X] Intro
-  * [X] Requirement
-  * [X] Installation
-  * [X] Quick Start
-  * [ ] Updating the dictionnaries
-  * [ ] Colors 
-  * [ ] Checker
-  * [ ] Getting help
-    
 
 # Table of Contents
 (BROKEN)
@@ -182,7 +171,7 @@ You can see every defined variables in the `abivim_var.vim` file in the
 
 If you want to modify the linked group or color for all variables, change directly in
 `update_abivim.sh` (temporary solution) : 
-```
+```bash
 #line 36
     echo "        let g:abivim_color_${sets} = \"NEWCOLOR\"" >> "$SCRIPT_DIR/ftplugin/abi/abivim_var.vim"
 
