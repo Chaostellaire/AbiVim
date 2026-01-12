@@ -21,8 +21,6 @@ echo "                           with the abinit variable documentation provided
 echo "                           --download option or --varfile option"
 echo "      --varfile VARFILE    Use the provided Abinit documentation"
 echo "                           (abinit/abimkdocs/variables_abinit.py)"
-echo "  -dl --download [LINK]    Download the documentation from source or the "
-echo "                           provided link" 
 echo "      --vimdir VIMDIR      Use the provided vimdir location by default it is "
 echo "                           \$HOME/.vim"
 echo "  -f  --force              Don't ask when copying files"
@@ -109,7 +107,7 @@ NOTE="\e[35mNOTE:\e[0m"
 
 if [ $# -eq 0 ]; then
     echo -e "$NOTE interactive not implemented yet, abivim will install the repo version to your vim"
-    echo -e "$NOTE Abinit documentation of version 10.3.5"
+    echo -e "$NOTE Abinit documentation of version 10.4.7"
     echo -e "$NOTE to upgrade do the following :"
     echo -e "$NOTE 1 - get a version of the variables file of abinit for exemple at "
     echo -e "$NOTE $DOWNLOAD_SITE"

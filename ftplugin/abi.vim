@@ -21,6 +21,10 @@ if !has("g:abivim_help_win")
     let g:abivim_popup_help="split"
 endif
 
+if !has("g:abivim_error_on_save")
+    let g:abibim_error_on_save=0
+endif
+
 let s:dict_location= expand("<sfile>:h") . "/../dict/"
 
 function! CompleteABI(findstart, base)
@@ -108,8 +112,11 @@ endfunction
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! CheckInput call CheckInput()
 command! GoToDef call abinit_function#GoToDef()
+command! ShowDef call abinit_function#ShowDef()
 
-if !exists("g:abivim_error_on_save") || !g:abivim_error_on_save
+nnoremap <C-]> :ShowDef
+
+if g:abivim_error_on_save
     au BufReadPost,BufWritePost *.abi HighlightRepeats  
 " TODO: Implement error when saving with syntax error
 endif
