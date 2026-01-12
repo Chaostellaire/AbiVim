@@ -22,7 +22,7 @@ if !has("g:abivim_help_win")
 endif
 
 if !has("g:abivim_error_on_save")
-    let g:abibim_error_on_save=0
+    let g:abivim_error_on_save=0
 endif
 
 let s:dict_location= expand("<sfile>:h") . "/../dict/"
@@ -116,8 +116,10 @@ command! ShowDef call abinit_function#ShowDef()
 
 nnoremap <C-]> :ShowDef
 
-if g:abivim_error_on_save
-    au BufReadPost,BufWritePost *.abi HighlightRepeats  
+if g:abivim_error_on_save==1
+    autocmd! BufReadPost,BufWritePost *.abi HighlightRepeats  
+else
+    autocmd! BufReadPost,BufWritePost
 " TODO: Implement error when saving with syntax error
 endif
 
